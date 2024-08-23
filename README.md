@@ -10,3 +10,11 @@
 - **Teleconsulta;** Consulta virtual com o intuito de agilizar o processo de atendimento.
 - **Checklist de sintomas;** Será um checklist para realizar uma triagem, a qual filtra pela gravidade e urgência das condições de saúde do paciente, facilitando a análise do médico.
 - **Agendamento de exame;** Buscar disponibilidade de horários e localidades das unidades de saúde.
+
+## Equipe:
+
+- Gabrielle Mastellari (gmv2@cesar.school)
+- Maria Clara Neves (mcsan@cesar.school)
+- Maria Fernanda Oliveira (mfomd@cesar.school)
+- Sofia Gomes (sgt@cesar.school)
+- Tiago Emílio (tera@cesar.school)
