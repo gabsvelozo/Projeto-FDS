@@ -1,8 +1,8 @@
 # SaúdeTec
 
-## Nosso objetivo:
+## Nosso produto:
 
-É criar um aplicativo inovador projetado para otimizar o atendimento público na saúde. Com a integração de monitoramento em tempo real, nossa plataforma ajuda a evitar a superlotação das unidades de saúde e proporciona uma gestão eficiente do fluxo de pacientes. O app inclui uma ferramenta de checklist de sintomas que agiliza o processo de triagem e permite aos profissionais de saúde oferecer um atendimento mais rápido e preciso.
+Uma aplicação web inovadora projetada para otimizar o atendimento público na saúde. Com a integração de monitoramento em tempo real, nossa plataforma ajuda a evitar a superlotação das unidades de saúde e proporciona uma gestão eficiente do fluxo de pacientes. A aplicação web inclui também uma ferramenta de checklist de sintomas que agiliza o processo de triagem e permite aos profissionais de saúde oferecer um atendimento mais rápido e preciso.
 
 ## Principais Funcionalidades:
 
