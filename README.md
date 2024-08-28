@@ -15,6 +15,7 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 - **Avaliação de Atendimento;** Após consultas ou exames, os pacientes podem avaliar o atendimento recebido, fornecendo feedback para melhorar os serviços oferecidos.
 - **Mapeamento de Doenças e Vacinas;** Recurso que permite aos pacientes rastrear doenças em sua região e localizar centros de vacinação próximos.
 - **Transparência e gestão de recursos;** Mostrar como os recursos financeiros estão sendo utilizados no sistema de saúde pública.
+- **Farmácias Integradas;** Integração com farmácias para pedidos automáticos de medicamentos prescritos, com opções de entrega ou retirada na loja.
 ## Equipe:
 
 - Gabrielle Mastellari (gmv2@cesar.school)
