@@ -10,6 +10,8 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 - **Teleconsulta;** Consulta virtual com o intuito de agilizar o processo de atendimento.
 - **Checklist de sintomas;** Será um checklist para realizar uma triagem, a qual filtra pela gravidade e urgência das condições de saúde do paciente, facilitando a análise do médico.
 - **Agendamento de exame;** Buscar disponibilidade de horários e localidades das unidades de saúde.
+- - **Histórico Médico Digital;** Um espaço onde os pacientes podem acessar e armazenar seus registros médicos, receitas, exames anteriores e anotações dos médicos, facilitando o acompanhamento contínuo da saúde.
+- **Avaliação de Atendimento;** Após consultas ou exames, os pacientes podem avaliar o atendimento recebido, fornecendo feedback para melhorar os serviços oferecidos.
 
 ## Equipe:
 
