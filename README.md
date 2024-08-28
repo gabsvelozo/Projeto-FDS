@@ -13,7 +13,7 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 - **Agendamento de exame;** Buscar disponibilidade de horários e localidades das unidades de saúde.
 - **Histórico Médico Digital;** Um espaço onde os pacientes podem acessar e armazenar seus registros médicos, receitas, exames anteriores e anotações dos médicos, facilitando o acompanhamento contínuo da saúde.
 - **Avaliação de Atendimento;** Após consultas ou exames, os pacientes podem avaliar o atendimento recebido, fornecendo feedback para melhorar os serviços oferecidos.
-
+- **Mapeamento de Doenças e Vacinas;** Recurso que permite aos pacientes rastrear doenças em sua região e localizar centros de vacinação próximos.
 ## Equipe:
 
 - Gabrielle Mastellari (gmv2@cesar.school)
