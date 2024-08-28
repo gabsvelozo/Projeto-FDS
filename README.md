@@ -6,6 +6,7 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 
 ## Principais Funcionalidades:
 
+- **Mapa de Localização das Unidades de Saúde;** Um mapa interativo mostrando a localização das unidades de saúde, com informações como endereço, horários de funcionamento e serviços oferecidos.
 - **Monitoramento em tempo real;** Acompanhar a quantidade de pessoas por unidade de saúde para evitar o superlotamento.
 - **Teleconsulta;** Consulta virtual com o intuito de agilizar o processo de atendimento.
 - **Checklist de sintomas;** Será um checklist para realizar uma triagem, a qual filtra pela gravidade e urgência das condições de saúde do paciente, facilitando a análise do médico.
