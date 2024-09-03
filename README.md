@@ -37,7 +37,7 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 - **Monitoramento em tempo real;** Como usuária, gostaria de ver quais unidades de saúde estão mais cheias ou mais vazias, para pode ir.
 - **Teleconsulta;** Como paciente, gostaria de ter acesso a teleconsultas para conseguir ser atendido sem atrapalhar minha rotina.
 - **Checklist de sintomas;** Como médica, gostaria que o paciente fizesse um checklist e fosse mandado para mim antes de começar o atendimento online.
-- **Agendamento de exame;**
+- **Agendamento de exame;** Como usuária, eu quero ter a disponibilidade de ver e escolher os horários.
 - **Histórico Médico Digital;** Como usuária, eu gostaria de ter todos os meus registros médicos organizados e acessíveis em um só lugar.
 - **Avaliação de Atendimento;** Como cidadã, gostaria de dar feedback para atendimentos de saúde bons ou ruins.
 - **Mapeamento de Doenças;** Como usuária típica, eu gostaria de saber quais as doenças estão afetando a minha região.
