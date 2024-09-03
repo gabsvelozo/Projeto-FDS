@@ -30,7 +30,8 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
  
 - **Farmácias Integradas;** Integração com farmácias para pedidos automáticos de medicamentos prescritos, com opções de entrega ou retirada na loja.
 
-##Histórias
+## Histórias:
+
 - **Mapa de Localização das Unidades de Saúde;** Como cidadã, gostaria de saber onde estão as UPAS mais próximas e como chegar lá.
 - **Horários de Funcionamento e Serviços Oferecidos;** Como cidadã, gostaria de saber quais os serviços oferecidos pelas UPAS de que horas estão funcionando.
 - **Monitoramento em tempo real;** Como usuária, gostaria de ver quais unidades de saúde estão mais cheias ou mais vazias, para pode ir.
