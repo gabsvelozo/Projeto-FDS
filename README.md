@@ -32,14 +32,14 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 
 ## Histórias:
 
-- **Mapa de Localização das Unidades de Saúde;** Como cidadã, gostaria de saber onde estão as UPAS mais próximas e como chegar lá.
-- **Horários de Funcionamento e Serviços Oferecidos;** Como cidadã, gostaria de saber quais os serviços oferecidos pelas UPAS de que horas estão funcionando.
+- **Mapa de Localização das Unidades de Saúde;** Como usuario tipico, gostaria de saber onde estão as UPAS mais próximas e como chegar lá.
+- **Horários de Funcionamento e Serviços Oferecidos;** Como usuario tipico, gostaria de saber quais os serviços oferecidos pelas UPAS de que horas estão funcionando.
 - **Monitoramento em tempo real;** Como usuária, gostaria de ver quais unidades de saúde estão mais cheias ou mais vazias, para pode ir.
 - **Teleconsulta;** Como paciente, gostaria de ter acesso a teleconsultas para conseguir ser atendido sem atrapalhar minha rotina.
 - **Checklist de sintomas;** Como médica, gostaria que o paciente fizesse um checklist e fosse mandado para mim antes de começar o atendimento online.
 - **Agendamento de exame;** Como usuária, eu quero ter a disponibilidade de ver e escolher os horários.
 - **Histórico Médico Digital;** Como usuária, eu gostaria de ter todos os meus registros médicos organizados e acessíveis em um só lugar.
-- **Avaliação de Atendimento;** Como cidadã, gostaria de dar feedback para atendimentos de saúde bons ou ruins.
+- **Avaliação de Atendimento;** Como usuario tipico, gostaria de dar feedback para atendimentos de saúde bons ou ruins.
 - **Mapeamento de Doenças;** Como usuária típica, eu gostaria de saber quais as doenças estão afetando a minha região.
 - **Localização de Centros de Vacinação;** Como usuária típica, eu gostaria de saber os pontos de vacinação das doenças da minha região.
 - **Transparência e gestão de recursos;** Como usuária, eu gostaria de de saber mais informações sobre o direcionamento do investimento público na área da saúde.
