@@ -4,6 +4,8 @@
 
 Uma aplicação web inovadora projetada para otimizar o atendimento público na saúde. Com a integração de monitoramento em tempo real, nossa plataforma ajuda a evitar a superlotação das unidades de saúde e proporciona uma gestão eficiente do fluxo de pacientes. A aplicação web inclui também uma ferramenta de checklist de sintomas que agiliza o processo de triagem e permite aos profissionais de saúde oferecer um atendimento mais rápido e preciso.
 
+https://camo.githubusercontent.com/2722992d519a722218f896d5f5231d49f337aaff4514e78bd59ac935334e916a/68747470733a2f2f692e696d6775722e636f6d2f77617856496d762e706e67
+
 ## Principais Funcionalidades:
 
 - **Mapa de Localização das Unidades de Saúde;** Um mapa interativo mostrando a localização das unidades de saúde, com informações como endereço, horários de funcionamento e serviços oferecidos.
