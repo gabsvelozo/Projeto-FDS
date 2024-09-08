@@ -8,8 +8,6 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 
 - **Mapa de Localização das Unidades de Saúde;** Um mapa interativo mostrando a localização das unidades de saúde, com informações como endereço, horários de funcionamento e serviços oferecidos.
 
-- **Horários de Funcionamento e Serviços Oferecidos;** O mapa exibe informações sobre os horários de funcionamento e os serviços oferecidos por cada unidade de saúde.
-
 - **Monitoramento em tempo real;** Acompanhar a quantidade de pessoas por unidade de saúde para evitar o superlotamento.
 
 - **Teleconsulta;** Consulta virtual com o intuito de agilizar o processo de atendimento.
@@ -33,7 +31,6 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 ## Histórias:
 
 - **Mapa de Localização das Unidades de Saúde;** Como usuario tipico, gostaria de saber onde estão as UPAS mais próximas e como chegar lá.
-- **Horários de Funcionamento e Serviços Oferecidos;** Como usuario tipico, gostaria de saber quais os serviços oferecidos pelas UPAS de que horas estão funcionando.
 - **Monitoramento em tempo real;** Como usuária, gostaria de ver quais unidades de saúde estão mais cheias ou mais vazias, para pode ir.
 - **Teleconsulta;** Como paciente, gostaria de ter acesso a teleconsultas para conseguir ser atendido sem atrapalhar minha rotina.
 - **Checklist de sintomas;** Como médica, gostaria que o paciente fizesse um checklist e fosse mandado para mim antes de começar o atendimento online.
