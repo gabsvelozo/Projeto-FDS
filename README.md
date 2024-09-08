@@ -42,6 +42,14 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 - **Transparência e gestão de recursos;** Como usuária, eu gostaria de de saber mais informações sobre o direcionamento do investimento público na área da saúde.
 - **Farmácias Integradas;** Como paciente,  gostaria de poder comprar os meus remédios sem precisar sair de casa por meio de uma farmácia integrada.
 
+## Protótipo Lo-Fi:
+
+**Link:**https://www.figma.com/proto/2py1Ek34vqbmArGG4y6Clh/Untitled?node-id=6-149&t=l9T1XK45B7QUgRh8-1
+
+**> Screencast:** 
+
+https://github.com/user-attachments/assets/45f0e135-a17e-4b12-aa6e-c40ac4fda182
+
 ## Equipe:
 
 - Gabrielle Mastellari (gmv2@cesar.school)
