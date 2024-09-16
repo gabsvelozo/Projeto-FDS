@@ -58,7 +58,7 @@ Link: [Figma Project](https://www.figma.com/proto/2py1Ek34vqbmArGG4y6Clh/Untitle
 
 **> Screencast:** 
 
-Link: [Screencast Protótipo](https://www.youtube.com/watch?v=pMWMLBKyNzY)
+Link: [Screencast Protótipo](https://youtu.be/u8HPy9f18NE?si=I0CbP6SjgjZDa8xg)
 
 <img src="https://camo.githubusercontent.com/2722992d519a722218f896d5f5231d49f337aaff4514e78bd59ac935334e916a/68747470733a2f2f692e696d6775722e636f6d2f77617856496d762e706e67" width="750px" height="5px"/>
 
