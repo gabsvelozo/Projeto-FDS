@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário de Consulta</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #ADD8E6;
+        margin: 0;
+      }
+
+      .container {
+        width: 600px;
+        padding: 30px;
+        background-color: white;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        position: relative;
+      }
+
+      label {
+        font-size: 16px;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      input[type="text"], select, input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      .submit-btn {
+        background-color: #4682B4;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .submit-btn:hover {
+        background-color: #315f86;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <label for="motivo">Qual o motivo da consulta? (doença ou condição)</label>
+        <input type="text" id="motivo" name="motivo" />
+
+        <label for="periodo">Informe quanto tempo está com esses sintomas:</label>
+        <select id="periodo" name="periodo">
+          <option value="horas">Horas</option>
+          <option value="dias">Dias</option>
+          <option value="semanas">Semanas</option>
+          <option value="meses">Meses</option>
+          <option value="anos">Anos</option>
+        </select>
+
+        <label for="dor">No momento, quanto de dor você está sentindo de 0 a 10?</label>
+        <input type="number" id="dor" name="dor" min="0" max="10" />
+
+        <label for="quando-dor">Quando você sente a dor? (Sempre, com frequência, às vezes)</label>
+        <input type="text" id="quando-dor" name="quando-dor" />
+
+        <label for="algo-mais">Além da causa principal, algo mais piora essa situação?</label>
+        <input type="text" id="algo-mais" name="algo-mais" />
+
+        <button type="submit" class="submit-btn">Enviar</button>
+      </form>
+    </div>
+  </body>
+</html>
