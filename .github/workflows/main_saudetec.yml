@@ -1,7 +1,3 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-# More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
-
 name: Build and deploy Python app to Azure Web App - saudetec
 
 on:
@@ -28,7 +24,7 @@ jobs:
           source venv/bin/activate
 
       - name: Install dependencies
-        run: pip install -r Projeto-FDS/requirements.txt
+        run: pip install -r requirements.txt  # Alterado para o caminho correto
 
       - name: Cleaning testing files
         run: |
