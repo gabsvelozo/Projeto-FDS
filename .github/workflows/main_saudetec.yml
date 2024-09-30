@@ -30,8 +30,8 @@ jobs:
 
       - name: Zip artifact for deployment
         run: |
-          zip -r release.zip SaudeTEC/*  # Zipando o diretório correto
-          mv release.zip .  # Movendo o zip para a raiz
+          zip -r release.zip SaudeTEC/*
+          mv release.zip .
 
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v4
