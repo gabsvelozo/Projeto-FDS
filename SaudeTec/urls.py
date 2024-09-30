@@ -16,20 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from Saude.views import HomeView, CadastroView, LoginView, AgendamentoView, ConsultasView
-from Saude import views
+from saude import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('Saude.urls')),
-    path('agendamento/', AgendamentoView.as_view(), name='agendamento'),
-    path('consultas/', ConsultasView.as_view(), name='consultas'), 
-    path('', views.login_view, name='login'),  
+    path('', include('saude.urls')),
+    path('', views.login_view, name='login'), 
     path('cadastro/', views.cadastro_view, name='cadastro'),  
-    path('menu/', views.menu_view, name='menu'),
-    path('checklist/', views.checklist_view, name='checklist'),
-    path('registros/', views.sintomas_view.as_view(), name='registros'), 
-    path('registros/delete/<int:id>/', views.delete_registro_view, name='delete_registro'),
-    path('historico/', views.HistoricoOnline.as_view(), name='historico_form'),
-    path('sucesso/', views.Sucesso.as_view(), name='sucesso'),
 ]

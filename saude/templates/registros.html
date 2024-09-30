@@ -18,7 +18,7 @@
                         <p class="text-sm text-gray-500">Registrado em: {{ consulta.created_at|date:"d/m/Y H:i" }}</p>
                     </div>
                     <div>
-                        <a href="{% url 'delete_registro' consulta.id %}" class="text-red-500 hover:text-red-700" title="Excluir">X</a>
+                        <a href="{% url 'saude:delete_registro' consulta.id %}" class="text-red-500 hover:text-red-700" title="Excluir">X</a>
                     </div>
                 </div>
             {% endfor %}
@@ -27,7 +27,7 @@
         {% endif %}
 
         <div class="mt-6">
-            <a href="{% url 'menu' %}" class="block bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 text-center">Voltar para o Menu</a>
+            <a href="{% url 'saude:menu' %}" class="block bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 text-center">Voltar para o Menu</a>
         </div>
     </div>
 </body>

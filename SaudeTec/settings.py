@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Saude',
+    'saude',
 ]
 
 MIDDLEWARE = [
@@ -118,8 +118,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-MEDIA_URL = 'Saude/static/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'Saude/static/')
+MEDIA_URL = 'saude/static/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'saude/static/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

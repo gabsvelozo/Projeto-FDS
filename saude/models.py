@@ -24,7 +24,7 @@ class Local(models.Model):
 
 class Consulta(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
-    especialidade = models.ForeignKey(Especialidade, on_delete=models.CASCADE)
+    especialidade = models.ForeignKey('saude.especialidade', on_delete=models.CASCADE)
     local = models.ForeignKey(Local, on_delete=models.CASCADE)
     data = models.DateField()
     especialista = models.CharField(max_length=100)  

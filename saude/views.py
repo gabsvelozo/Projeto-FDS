@@ -3,7 +3,7 @@ from django.views import View
 from .models import HistoricoMedico, SintomasUsuario
 from django.contrib.auth import authenticate, login as lg, login
 from django.contrib.auth.models import User
-from Saude.models import Especialidade, Local, Consulta
+from saude.models import Especialidade, Local, Consulta
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -30,7 +30,7 @@ class HistoricoOnline(View):
 
         historico.save()
 
-        return redirect('Saude:sucesso')
+        return redirect('saude:menu')
     
 class Sucesso(View):
     def get(self, request):
@@ -77,7 +77,7 @@ class LoginView(View):
 
         try:
             LoginView.loginUsuario(request, username, password)
-            return redirect('Saude:home')  
+            return redirect('saude:home')  
         except ValueError as e:
             return render(request, 'login.html', {'error': str(e)})
 
@@ -111,12 +111,12 @@ class AgendamentoView(View):
 
         consulta = Consulta(
             usuario=request.user,
-            especialidade=especialidade,
-            local=local,
+            especialidade_id=especialidade_id,
+            local_id=local_id,
             data=data
         )
         consulta.save()
-        return redirect('Saude:consultas')
+        return redirect('saude:menu')
 
 class ConsultasView(View):
     def get(self, request):
@@ -133,7 +133,7 @@ def login_view(request):
         if user is not None:
             login(request, user)
             messages.success(request, 'Autenticado com sucesso.')
-            return redirect('menu')  
+            return redirect('saude:menu')  
         else:
             messages.error(request, 'Nome de usuário ou senha incorretos.')
 
@@ -197,7 +197,7 @@ def checklist_view(request):
         sintomas_usuario.save()  
         
         messages.success(request, 'Seus sintomas foram enviados com sucesso!')
-        return redirect('Saude:menu')  
+        return redirect('saude:menu')  
     
     return render(request, 'checklist.html', {'sintomas_comuns': sintomas_comuns})
 
@@ -218,7 +218,7 @@ def delete_registro_view(request, id):
     if request.method == 'POST':
         registro.delete()  
         messages.success(request, 'Registro excluído com sucesso!')
-        return redirect('Saude:registros')  
+        return redirect('saude:registros')  
 
     return render(request, 'confirmar_exclusao.html', {'registro': registro})
     
