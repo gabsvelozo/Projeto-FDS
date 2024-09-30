@@ -30,6 +30,6 @@ urlpatterns = [
     path('checklist/', views.checklist_view, name='checklist'),
     path('registros/', views.sintomas_view.as_view(), name='registros'), 
     path('registros/delete/<int:id>/', views.delete_registro_view, name='delete_registro'),
-    path('historico/', views.HistoricoOnline.as_view(), name='historico'),
+    path('historico/', views.HistoricoOnline.as_view(), name='historico_form'),
     path('sucesso/', views.Sucesso.as_view(), name='sucesso'),
 ]
