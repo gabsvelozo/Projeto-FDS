@@ -28,8 +28,7 @@ jobs:
 
       - name: Cleaning testing files
         run: |
-          rm db.sqlite3
-          rm SaudeTEC/.env  # Acesso correto ao arquivo .env
+          rm SaudeTEC/.env
 
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
