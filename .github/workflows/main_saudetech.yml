@@ -1,8 +1,4 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-# More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
-
-name: Build and deploy Python app to Azure Web App - SaudeTech
+name: Build and deploy Python app to Azure Web App - saudetec
 
 on:
   push:
@@ -20,16 +16,16 @@ jobs:
       - name: Set up Python version
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: "3.11"
 
       - name: Create and start virtual environment
         run: |
           python -m venv venv
           source venv/bin/activate
-      
+
       - name: Install dependencies
-        run: pip install -r requirements.txt
-        
+        run: pip install -r requirements.txt # Caminho ajustado
+
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
       - name: Zip artifact for deployment
@@ -47,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'Production'
+      name: "Production"
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
       id-token: write #This is required for requesting the JWT
@@ -61,18 +57,16 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip
 
-      
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_059462E3AB1E4835B27651CD793D4A15 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_3507C036F35B4496847651A633C38EE9 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_AFDF4E702DF5491092440F1B96A6E5DE }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_E7EC0EEADA9643CC85EE75D795680584 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_F4643E178E644A25863510B9B8DF9837 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_B24F02811C214C1EAF2A35FFB4C18EC4 }}
 
-      - name: 'Deploy to Azure Web App'
+      - name: "Deploy to Azure Web App"
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'SaudeTech'
-          slot-name: 'Production'
-          
+          app-name: "saudetec"
+          slot-name: "Production"
