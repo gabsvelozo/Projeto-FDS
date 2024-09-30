@@ -30,8 +30,7 @@ jobs:
 
       - name: Zip artifact for deployment
         run: |
-          zip -r release.zip SaudeTEC/*
-          mv release.zip .
+          zip -r release.zip SaudeTec/ saude/ manage.py README.md requirements.txt
 
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v4
