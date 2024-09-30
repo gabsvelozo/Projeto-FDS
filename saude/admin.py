@@ -5,5 +5,3 @@ admin.site.register(Especialidade)
 admin.site.register(Local)
 admin.site.register(Consulta)
 admin.site.register(SintomasUsuario)
-
-#teste pra ver se consigo commitar
