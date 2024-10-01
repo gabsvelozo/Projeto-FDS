@@ -30,13 +30,13 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
  
 - **Farmácias Integradas;** Integração com farmácias para pedidos automáticos de medicamentos prescritos, com opções de entrega ou retirada na loja.
 
-- **Visualizaçao de checklist;** acompanhamento dos registros feitos pelo paciente na checklist.
+- **Visualização de checklist;** acompanhamento dos registros feitos pelo paciente na checklist.
 
-- **Visualizaçao da data da consulta marcada** O paciente poderá visualizar  as datas das consultas
+- **Visualização da data da consulta marcada;** O paciente poderá visualizar  as datas das consultas
 
-- **Visualizaçao a especialidade da consulta marcada** O paciente poderá visualizar  as especialidades das consultas
+- **Visualização da especialidade da consulta marcada;** O paciente poderá visualizar  as especialidades das consultas
 
-- **Visualizaçao do local da consulta marcada**O paciente poderá visualizar  as datas das consultas
+- **Visualização do local da consulta marcada;** O paciente poderá visualizar  as datas das consultas
 
 
 ## Histórias:
@@ -52,10 +52,10 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 - **Localização de Centros de Vacinação;** Como usuária típica, eu gostaria de saber os pontos de vacinação das doenças da minha região.
 - **Transparência e gestão de recursos;** Como usuária, eu gostaria de de saber mais informações sobre o direcionamento do investimento público na área da saúde.
 - **Farmácias Integradas;** Como paciente,  gostaria de poder comprar os meus remédios sem precisar sair de casa por meio de uma farmácia integrada.
-- **Visualizaçao da checklist** como usuário, gostaria de acompanhar e excluir os registros feitos pelo meu paciente na checklist.
-- **Visualizaçao da data da consulta marcada** Como usuária, eu quero ter a disponibilidade de visualizar as datas das consultas
-- **Visualizaçao a especialidade da consulta marcada** Como usuário, gostaria de poder visualizar qual foi a especialidade que escolhi para a minha consulta
-- **Visualizaçao do local das consulta marcada** Como usuário, gostaria de poder visualizar qual foi o local que escolhi para ser atendida na minha consulta
+- **Visualização da checklist;** como usuário, gostaria de acompanhar e excluir os registros feitos pelo meu paciente na checklist.
+- **Visualização da data da consulta marcada;** Como usuária, eu quero ter a disponibilidade de visualizar as datas das consultas
+- **Visualização a especialidade da consulta marcada;** Como usuário, gostaria de poder visualizar qual foi a especialidade que escolhi para a minha consulta
+- **Visualização do local das consulta marcada;** Como usuário, gostaria de poder visualizar qual foi o local que escolhi para ser atendida na minha consulta
   
 <img src="https://camo.githubusercontent.com/2722992d519a722218f896d5f5231d49f337aaff4514e78bd59ac935334e916a/68747470733a2f2f692e696d6775722e636f6d2f77617856496d762e706e67" width="750px" height="5px"/>
 
@@ -65,9 +65,9 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 
 ![Captura de tela 2024-09-08 192232](https://github.com/user-attachments/assets/1f193c2a-b05b-4d45-bb53-bb2b9578f50e)
 
-[Figma Project](https://www.figma.com/design/fJZdsUoj1KpcO9ZPP96tDq/Untitled?node-id=1-76&t=lwcCdajnr2DPN83K-1)
+[Figma Project - Protótipo](https://www.figma.com/design/fJZdsUoj1KpcO9ZPP96tDq/Untitled?node-id=1-76&t=lwcCdajnr2DPN83K-1)
 
-[Screencast Protótipo](https://youtu.be/maMxSXEST50?si=vDulefdhb5iK0yFh)
+[Screencast - Protótipo](https://youtu.be/maMxSXEST50?si=vDulefdhb5iK0yFh)
 
 <img src="https://camo.githubusercontent.com/2722992d519a722218f896d5f5231d49f337aaff4514e78bd59ac935334e916a/68747470733a2f2f692e696d6775722e636f6d2f77617856496d762e706e67" width="750px" height="5px"/>
 
@@ -84,6 +84,8 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 [Screencast do sistema](https://youtu.be/G1svo8OgxmY)
 
 [Website do produto](https://saudetech-fkgxhnfzdxeec5h4.brazilsouth-01.azurewebsites.net/)
+
+<img src="https://camo.githubusercontent.com/2722992d519a722218f896d5f5231d49f337aaff4514e78bd59ac935334e916a/68747470733a2f2f692e696d6775722e636f6d2f77617856496d762e706e67" width="750px" height="5px"/>
 
 ## Equipe:
 
