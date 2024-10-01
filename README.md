@@ -55,8 +55,8 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 - **Visualizaçao da checklist** como usuário, gostaria de acompanhar e excluir os registros feitos pelo meu paciente na checklist.
 - **Visualizaçao da data da consulta marcada** Como usuária, eu quero ter a disponibilidade de visualizar as datas das consultas
 - **Visualizaçao a especialidade da consulta marcada** Como usuário, gostaria de poder visualizar qual foi a especialidade que escolhi para a minha consulta
-- - **Visualizaçao do local das consulta marcada** Como usuário, gostaria de poder visualizar qual foi o local que escolhi para ser atendida na minha consulta
-  - 
+- **Visualizaçao do local das consulta marcada** Como usuário, gostaria de poder visualizar qual foi o local que escolhi para ser atendida na minha consulta
+  
 <img src="https://camo.githubusercontent.com/2722992d519a722218f896d5f5231d49f337aaff4514e78bd59ac935334e916a/68747470733a2f2f692e696d6775722e636f6d2f77617856496d762e706e67" width="750px" height="5px"/>
 
 ## Entrega 01
@@ -65,15 +65,25 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 
 ![Captura de tela 2024-09-08 192232](https://github.com/user-attachments/assets/1f193c2a-b05b-4d45-bb53-bb2b9578f50e)
 
-## Protótipo Lo-Fi:
+[Figma Project](https://www.figma.com/design/fJZdsUoj1KpcO9ZPP96tDq/Untitled?node-id=1-76&t=lwcCdajnr2DPN83K-1)
 
-Link: [Figma Project](https://www.figma.com/proto/2py1Ek34vqbmArGG4y6Clh/Untitled?node-id=6-149&t=l9T1XK45B7QUgRh8-1)
-
-**> Screencast:** 
-
-Link: [Screencast Protótipo](https://youtu.be/u8HPy9f18NE?si=I0CbP6SjgjZDa8xg)
+[Screencast Protótipo](https://youtu.be/maMxSXEST50?si=vDulefdhb5iK0yFh)
 
 <img src="https://camo.githubusercontent.com/2722992d519a722218f896d5f5231d49f337aaff4514e78bd59ac935334e916a/68747470733a2f2f692e696d6775722e636f6d2f77617856496d762e706e67" width="750px" height="5px"/>
+
+## Entrega 02
+
+## Quadro Backlog JIRA:
+
+![Captura de tela 2024-09-30 214422](https://github.com/user-attachments/assets/c969f87c-6091-4fa2-8ea8-9e2cdb1ab2bc)
+
+## Sprint do JIRA:
+
+![Captura de tela 2024-09-30 214507](https://github.com/user-attachments/assets/c26d4684-b9d3-4698-a0c4-ba8baa0e5355)
+
+[Screencast do sistema](https://youtu.be/G1svo8OgxmY)
+
+[Website do produto](https://saudetech-fkgxhnfzdxeec5h4.brazilsouth-01.azurewebsites.net/)
 
 ## Equipe:
 
