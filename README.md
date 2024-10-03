@@ -81,7 +81,7 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 
 ![Captura de tela 2024-09-30 214507](https://github.com/user-attachments/assets/c26d4684-b9d3-4698-a0c4-ba8baa0e5355)
 
-[Screencast do sistema](https://youtu.be/G1svo8OgxmY)
+[Screencast do sistema](https://www.youtube.com/watch?v=2D1nTuNnNok)
 
 [Website do produto](https://saudetech-fkgxhnfzdxeec5h4.brazilsouth-01.azurewebsites.net/)
 
