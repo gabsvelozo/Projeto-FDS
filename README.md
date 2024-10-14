@@ -92,7 +92,7 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 - Gabrielle Mastellari (gmv2@cesar.school)
 - Maria Clara Neves (mcsan@cesar.school)
 - Maria Fernanda Oliveira (mfomd@cesar.school)
-- Sofia Gomes (sgt@cesar.school)
+- Sofia Gomes Tenório(sgt@cesar.school)
 - Tiago Emílio (tera@cesar.school)
 - Luís Costa (lacc2@cesar.school)
 - Gabriel Victor (gvag@cesar.school)
