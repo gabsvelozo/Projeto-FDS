@@ -231,3 +231,12 @@ class LocalView(View):
             locais = Local.objects.filter(bairro_id=bairro_id)
 
         return render(request, 'localizacao.html', {'bairros': bairros, 'locais': locais})
+    
+    def post(self, request):
+        bairros_1 = request.POST.get('bairros')
+        locais_1 = request.POST.get('locais')
+
+        bairros = Bairros.objects.get(id=bairros_1)
+        locais = Locais.objects.get(id=locais_1)
+
+        return redirect('outra_pagina') #mudar a pagina
