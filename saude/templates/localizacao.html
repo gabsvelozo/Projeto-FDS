@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="bairro-select" onchange="window.location.href=this.value;">
+        <option value="">Selecione um Bairro</option>
+        {% for bairro in bairros %}
+            <option value="?bairro={{ bairro.id }}">{{ bairro.nome }}</option>
+        {% endfor %}
+    </select>
+
+    {% if locais %}
+        <h2>Locais no Bairro Selecionado:</h2>
+        <ul>
+            {% for local in locais %}
+                <li>{{ local.nome }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>

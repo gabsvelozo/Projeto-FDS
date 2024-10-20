@@ -47,3 +47,16 @@ class SintomasUsuario(models.Model):
     @classmethod    
     def get_consultas(cls):
         return cls.objects.all()
+    
+class Bairros(models.Model):
+    nome = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nome
+
+class Locais(models.Model):
+    nome = models.CharField(max_length=100)
+    bairro = models.ForeignKey(Bairros, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.nome

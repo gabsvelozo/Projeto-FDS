@@ -1,5 +1,5 @@
 from django.urls import path
-from saude.views import AgendamentoView, ConsultasView
+from saude.views import AgendamentoView, ConsultasView, LocalView
 from . import views
 
 app_name = 'saude'
@@ -17,4 +17,5 @@ urlpatterns = [
     path('sucesso/', views.Sucesso.as_view(), name='sucesso'),
     path('', views.login_view, name='login'), 
     path('cadastro/', views.cadastro_view, name='cadastro'),  
+    path('localizacao/', LocalView.as_view(), name='localizacao'),
 ]
