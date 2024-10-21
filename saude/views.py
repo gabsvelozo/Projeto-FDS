@@ -225,18 +225,25 @@ def delete_registro_view(request, id):
 class LocalView(View):
     def get(self, request):
         bairros = Bairros.objects.all()
-        locais = None
+        upas = None
         bairro_id = request.GET.get('bairro')
+        
         if bairro_id:
-            locais = Local.objects.filter(bairro_id=bairro_id)
+            upas = Locais.objects.filter(bairro_id=bairro_id)
 
-        return render(request, 'localizacao.html', {'bairros': bairros, 'locais': locais})
+        context = {
+            'bairros': bairros,
+            'upas': upas,
+        }
+
+        return render(request, 'localizacao.html', context)
     
     def post(self, request):
-        bairros_1 = request.POST.get('bairros')
-        locais_1 = request.POST.get('locais')
+        bairro_id = request.POST.get('bairros')
+        local_id = request.POST.get('locais')
 
-        bairros = Bairros.objects.get(id=bairros_1)
-        locais = Locais.objects.get(id=locais_1)
+        # Verifique se os IDs são válidos
+        bairros = Bairros.objects.get(id=bairro_id)
+        locais = Locais.objects.get(id=local_id)
 
-        return redirect('outra_pagina') #mudar a pagina
+        return redirect('saude:menu')  # Altere para a URL desejada
