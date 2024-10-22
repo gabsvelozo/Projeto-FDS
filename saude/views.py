@@ -229,7 +229,7 @@ class LocalView(View):
         bairro_id = request.GET.get('bairro')
         
         if bairro_id:
-            upas = Locais.objects.filter(bairro_id=bairro_id)
+            upas = Locais.objects.filter(bairro_id=bairro_id).prefetch_related('info_local_set')
 
         context = {
             'bairros': bairros,
@@ -247,3 +247,4 @@ class LocalView(View):
         locais = Locais.objects.get(id=local_id)
 
         return redirect('saude:menu')  # Altere para a URL desejada
+    

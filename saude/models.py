@@ -57,6 +57,14 @@ class Bairros(models.Model):
 class Locais(models.Model):
     nome = models.CharField(max_length=100)
     bairro = models.ForeignKey(Bairros, on_delete=models.CASCADE)
+    
+
+    def __str__(self):
+        return self.nome
+    
+class Info_local(models.Model):
+    nome = models.TextField(blank=True, null=True)
+    locais = models.ForeignKey(Locais, on_delete=models.CASCADE, default=1)
 
     def __str__(self):
         return self.nome
