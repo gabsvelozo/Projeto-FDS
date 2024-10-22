@@ -4,11 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registros de Sintomas</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 flex items-center justify-center h-screen">
-    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h1 class="text-2xl text-center font-bold mb-6">Seus Registros de Sintomas</h1>
+<body class="bg-gray-100 items-center justify-center h-screen">
+    <div style="display: none;">
+        {% load static %}
+     </div>
+
+    <nav class="bg-blue-500 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="{% url 'saude:menu' %}" class="flex items-center">
+                        <img class="h-24 object-cover text-center" src="{% static '/saudetec1.png' %}" alt="SaúdeTec Logo">
+                        <span class="ml-2 text-xl font-bold">SaúdeTec</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="{% url 'saude:consultas' %}" class="flex items-center text-white hover:bg-[#5a95f5] px-3 py-2 rounded-md text-sm font-medium">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-6 8h6m-6 4h6m-6 4h6m2-2a2 2 0 002-2V7a2 2 0 00-2-2h-2V3a1 1 0 00-1-1h-6a1 1 0 00-1 1v2H6a2 2 0 00-2 2v10a2 2 0 002 2h2z" />
+                            </svg>
+                            Consultas
+                        </a>
+                        <a href="{% url 'saude:agendamento' %}" class="flex items-center text-white hover:bg-[#5a95f5] px-3 py-2 rounded-md text-sm font-medium">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2h6v2m0 4H9a2 2 0 01-2-2v-2a2 2 0 012-2h6a2 2 0 012 2v2a2 2 0 01-2 2zm-4-8v-4a4 4 0 118 0v4" />
+                            </svg>
+                            Agendamento
+                        </a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-[#5a95f5] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Abrir menu principal</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="{% url 'saude:consultas' %}" class="flex items-center text-white hover:bg-[#5a95f5] block px-3 py-2 rounded-md text-base font-medium">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-6 8h6m-6 4h6m-6 4h6m2-2a2 2 0 002-2V7a2 2 0 00-2-2h-2V3a1 1 0 00-1-1h-6a1 1 0 00-1 1v2H6a2 2 0 00-2 2v10a2 2 0 002 2h2z" />
+                    </svg>
+                    Consultas
+                </a>
+                <a href="{% url 'saude:agendamento' %}" class="flex items-center text-white hover:bg-[#5a95f5] block px-3 py-2 rounded-md text-base font-medium">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2h6v2m0 4H9a2 2 0 01-2-2v-2a2 2 0 012-2h6a2 2 0 012 2v2a2 2 0 01-2 2zm-4-8v-4a4 4 0 118 0v4" />
+                    </svg>
+                    Agendamento
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md my-8 mx-auto">
+        <h1 class="text-2xl text-center font-bold mb-6">Seus registros de sintomas</h1>
 
         {% if tem_registros %}
             {% for consulta in lista_consultas %}
@@ -23,12 +80,11 @@
                 </div>
             {% endfor %}
         {% else %}
-            <p class="text-gray-700">Você não registrou nenhum sintoma ainda.</p>
+            <p class="text-gray-700 text-center">Você não registrou nenhum sintoma ainda.
+                <br>
+                <a href="{% url 'saude:menu' %}" class="text-blue-500 underline"> Voltar para o menu</a>.
+            </p>
         {% endif %}
-
-        <div class="mt-6">
-            <a href="{% url 'saude:menu' %}" class="block bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 text-center">Voltar para o Menu</a>
-        </div>
     </div>
 </body>
 </html>
