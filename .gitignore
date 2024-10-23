@@ -140,3 +140,5 @@ GitHub.sublime-settings
 
 # database
 db.sqlite3
+
+/saude/migrations
