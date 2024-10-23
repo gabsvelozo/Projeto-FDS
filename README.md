@@ -100,7 +100,7 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 [Screencast do Lo-Fi](https://www.youtube.com/watch?v=Kq-6YD6HoDU)<br>
 [Website do produto](https://saudetech-fkgxhnfzdxeec5h4.eastus-01.azurewebsites.net/)<br>
 [Screencast do Azure]<br>
-[Screencast dos testes]<br>
+[Screencast dos testes](https://youtu.be/5YEgpYKPeYY)<br>
 
 ## Equipe:
 
