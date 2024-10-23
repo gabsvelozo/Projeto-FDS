@@ -65,6 +65,7 @@
     </nav>
     <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg mx-auto my-8">
         <h1 class="text-3xl font-bold mb-6 text-center">Histórico médico digital</h1>
+        
         <form action="{% url 'saude:menu' %}" method="POST" class="space-y-4">
             {% csrf_token %}
             
