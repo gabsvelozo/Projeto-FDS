@@ -3,12 +3,12 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 
 class HistoricoMedico(models.Model):
-    nome = models.CharField(max_length=100, blank=False, default='Sem nome')
-    idade = models.PositiveIntegerField(blank=False, default=0)
-    medicacao = models.TextField(blank=True, default='Não usa medicamento')
-    doencas = models.TextField(blank=True, default='Sem deonças pré-existentes')
-    cirugias = models.TextField(blank=True, default='Sem cirugias')
-    alergias = models.TextField(blank=True, default='Sem alergias')
+    nome = models.CharField(max_length=100, blank=False, default='Sem nome', null=False)
+    idade = models.PositiveIntegerField(blank=False, default=0, null=False)
+    medicacao = models.TextField(blank=True, default='Não usa medicamento', null=True)
+    doencas = models.TextField(blank=True, default='Sem deonças pré-existentes', null=True)
+    cirugias = models.TextField(blank=True, default='Sem cirugias', null=True)
+    alergias = models.TextField(blank=True, default='Sem alergias', null=True)
 
 class Especialidade(models.Model):
     nome = models.CharField(max_length=100)
