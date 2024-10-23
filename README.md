@@ -93,11 +93,11 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 
 ## Quadro backlog:
 
-[Link do Jira](https://cesar-team-o8aoxwec.atlassian.net/jira/projects?page=1&sortKey=name&sortOrder=ASC&types=software%2Cbusiness)
-[Atualização do protótipo de Lo-Fi](https://www.figma.com/design/fJZdsUoj1KpcO9ZPP96tDq/Untitled?node-id=0-1&m=dev&t=Ju66FDHjB4CN45ly-1)
-[Screencast do Lo-Fi]
-[Website do produto]
-[Screencast dos testes]
+[Link do Jira](https://cesar-team-o8aoxwec.atlassian.net/jira/projects?page=1&sortKey=name&sortOrder=ASC&types=software%2Cbusiness)<br>
+[Atualização do protótipo de Lo-Fi](https://www.figma.com/design/fJZdsUoj1KpcO9ZPP96tDq/Untitled?node-id=0-1&m=dev&t=Ju66FDHjB4CN45ly-1)<br>
+[Screencast do Lo-Fi]<br>
+[Website do produto]<br>
+[Screencast dos testes]<br>
 
 ## Equipe:
 
