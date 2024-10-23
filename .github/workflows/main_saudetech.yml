@@ -70,3 +70,5 @@ jobs:
         with:
           app-name: "SaudeTech"
           slot-name: "Production"
+
+          slot-name: "Production"

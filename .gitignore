@@ -7,6 +7,7 @@ __pycache__
 # NPM
 node_modules/
 
+
 # Backup files # 
 *.bak 
 
@@ -99,6 +100,7 @@ celerybeat-schedule.*
 *.sage.py 
 
 # Environments 
+
 .env
 .venv 
 env/ 
@@ -140,5 +142,3 @@ GitHub.sublime-settings
 
 # database
 db.sqlite3
-
-/saude/migrations

@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+
 from dotenv import load_dotenv # type: ignore
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,7 +38,6 @@ else:
     CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS', '').split(' ')
     SECURE_SSL_REDIRECT = \
         os.getenv('SECURE_SSL_REDIRECT', '0').lower() in ['true', 't', '1']
-
 
     if SECURE_SSL_REDIRECT:
         SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
