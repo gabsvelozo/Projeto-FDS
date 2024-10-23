@@ -87,6 +87,21 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 
 <img src="https://camo.githubusercontent.com/2722992d519a722218f896d5f5231d49f337aaff4514e78bd59ac935334e916a/68747470733a2f2f692e696d6775722e636f6d2f77617856496d762e706e67" width="750px" height="5px"/>
 
+## Entrega 03
+
+## Sprint do Jira: 
+![Entrega 3](https://github.com/user-attachments/assets/2b63145a-60ce-47f6-9f9d-a9d3f11f7cfe)
+
+## Quadro backlog:
+![Captura de Tela (404)](https://github.com/user-attachments/assets/08858bb4-d476-4157-b926-261bb5cffdb8)
+
+[Link do Jira](https://cesar-team-o8aoxwec.atlassian.net/jira/projects?page=1&sortKey=name&sortOrder=ASC&types=software%2Cbusiness)<br>
+[Atualização do protótipo de Lo-Fi](https://www.figma.com/design/fJZdsUoj1KpcO9ZPP96tDq/Untitled?node-id=0-1&m=dev&t=Ju66FDHjB4CN45ly-1)<br>
+[Screencast do Lo-Fi](https://www.youtube.com/watch?v=Kq-6YD6HoDU)<br>
+[Website do produto](https://saudetech-fkgxhnfzdxeec5h4.eastus-01.azurewebsites.net/)<br>
+[Screencast do Azure]<br>
+[Screencast dos testes](https://youtu.be/5YEgpYKPeYY)<br>
+
 ## Equipe:
 
 - Gabrielle Mastellari (gmv2@cesar.school)
