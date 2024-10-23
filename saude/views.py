@@ -3,7 +3,7 @@ from django.views import View
 from .models import HistoricoMedico, SintomasUsuario
 from django.contrib.auth import authenticate, login as lg, login
 from django.contrib.auth.models import User
-from saude.models import Especialidade, Local, Consulta
+from saude.models import Especialidade, Local, Consulta, Bairros, Locais
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -221,4 +221,30 @@ def delete_registro_view(request, id):
         return redirect('saude:registros')  
 
     return render(request, 'confirmar_exclusao.html', {'registro': registro})
+
+class LocalView(View):
+    def get(self, request):
+        bairros = Bairros.objects.all()
+        upas = None
+        bairro_id = request.GET.get('bairro')
+        
+        if bairro_id:
+            upas = Locais.objects.filter(bairro_id=bairro_id).prefetch_related('info_local_set')
+
+        context = {
+            'bairros': bairros,
+            'upas': upas,
+        }
+
+        return render(request, 'localizacao.html', context)
+    
+    def post(self, request):
+        bairro_id = request.POST.get('bairros')
+        local_id = request.POST.get('locais')
+
+        # Verifique se os IDs são válidos
+        bairros = Bairros.objects.get(id=bairro_id)
+        locais = Locais.objects.get(id=local_id)
+
+        return redirect('saude:menu')  # Altere para a URL desejada
     

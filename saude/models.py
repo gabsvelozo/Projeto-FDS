@@ -3,12 +3,12 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 
 class HistoricoMedico(models.Model):
-    nome = models.CharField(max_length=100, blank=False, default='Sem nome')
-    idade = models.PositiveIntegerField(blank=False, default=0)
-    medicacao = models.TextField(blank=True, default='Não usa medicamento')
-    doencas = models.TextField(blank=True, default='Sem deonças pré-existentes')
-    cirugias = models.TextField(blank=True, default='Sem cirugias')
-    alergias = models.TextField(blank=True, default='Sem alergias')
+    nome = models.CharField(max_length=100, blank=False, default='Sem nome', null=False)
+    idade = models.PositiveIntegerField(blank=False, default=0, null=False)
+    medicacao = models.TextField(blank=True, default='Não usa medicamento', null=True)
+    doencas = models.TextField(blank=True, default='Sem deonças pré-existentes', null=True)
+    cirugias = models.TextField(blank=True, default='Sem cirugias', null=True)
+    alergias = models.TextField(blank=True, default='Sem alergias', null=True)
 
 class Especialidade(models.Model):
     nome = models.CharField(max_length=100)
@@ -47,3 +47,25 @@ class SintomasUsuario(models.Model):
     @classmethod    
     def get_consultas(cls):
         return cls.objects.all()
+    
+class Bairros(models.Model):
+    nome = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nome
+
+class Locais(models.Model):
+    nome = models.CharField(max_length=100)
+    bairro = models.ForeignKey(Bairros, on_delete=models.CASCADE)
+    
+
+    def __str__(self):
+        return self.nome
+    
+class Info_local(models.Model):
+    nome = models.TextField(blank=True, null=True)
+    locais = models.ForeignKey(Locais, on_delete=models.CASCADE, default=1)
+
+    def __str__(self):
+        return self.nome
+    
