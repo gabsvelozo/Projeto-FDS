@@ -7,6 +7,8 @@ from saude.models import Especialidade, Local, Consulta, Bairros, Locais
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
+
+# Gerencia o histórico médico do usuário
 class HistoricoOnline(View):
     def get(self, request):
         return render(request, 'historico_form.html')
@@ -19,6 +21,7 @@ class HistoricoOnline(View):
         cirugias = request.POST.get("cirugias")
         alergias = request.POST.get("alergias")
 
+        # Nova instância de HistoricoMedico e salva no banco de dados
         historico = HistoricoMedico(
             nome=nome, 
             idade=idade, 
@@ -27,69 +30,18 @@ class HistoricoOnline(View):
             cirugias=cirugias, 
             alergias=alergias
         )
-
         historico.save()
 
         return redirect('saude:menu')
     
-class Sucesso(View):
-    def get(self, request):
-        return render(request, 'sucesso.html')
 
+# Página inicial 
 class HomeView(View):
     def get(self, request):
         return render(request, 'home.html')
 
-class CadastroView(View):
-    def get(self, request):
-        return render(request, 'cadastro.html')
-    
-    def post(self, request):  
-        username = request.POST.get('username')
-        email = request.POST.get('email')
-        password = request.POST.get('password')
 
-        try:
-            CadastroView.criarUsuario(username, email, password)
-            return redirect('home')  
-        except ValueError as e:
-            return render(request, 'cadastro.html', {'error': str(e)})
-
-    @staticmethod  
-    def criarUsuario(username, email, password):
-        if CadastroView.obterUsuarioPorNome(username) is not None:
-            raise ValueError("Usuário já existe")
-        else:
-            user = User.objects.create_user(username, email, password)
-            user.save()
-
-    @staticmethod
-    def obterUsuarioPorNome(name):
-        return User.objects.filter(username=name).first()
-
-class LoginView(View):
-    def get(self, request):
-        return render(request, 'login.html')
-    
-    def post(self, request):
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-
-        try:
-            LoginView.loginUsuario(request, username, password)
-            return redirect('saude:home')  
-        except ValueError as e:
-            return render(request, 'login.html', {'error': str(e)})
-
-    @staticmethod
-    def loginUsuario(request, username, password):
-        user = authenticate(username=username, password=password)
-
-        if user is None:
-            raise ValueError("Usuário ou senha inválidos")
-        else:
-            lg(request, user)
-
+# Agendar consultas 
 class AgendamentoView(View):
     def get(self, request):
         especialidades = Especialidade.objects.all()
@@ -109,6 +61,7 @@ class AgendamentoView(View):
         especialidade = Especialidade.objects.get(id=especialidade_id)
         local = Local.objects.get(id=local_id)
 
+        # Cria nova consulta 
         consulta = Consulta(
             usuario=request.user,
             especialidade_id=especialidade_id,
@@ -118,52 +71,16 @@ class AgendamentoView(View):
         consulta.save()
         return redirect('saude:menu')
 
+
+# Listar consultas do usuário
 class ConsultasView(View):
     def get(self, request):
         consultas = Consulta.objects.filter(usuario=request.user)
         return render(request, 'consultas.html', {'consultas': consultas})
 
 
-def login_view(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)
 
-        if user is not None:
-            login(request, user)
-            messages.success(request, 'Autenticado com sucesso.')
-            return redirect('saude:menu')  
-        else:
-            messages.error(request, 'Nome de usuário ou senha incorretos.')
-
-    return render(request, 'login.html')
-
-def cadastro_view(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        email = request.POST.get('email')
-        password = request.POST.get('password')
-        confirm_password = request.POST.get('confirm_password')
-
-        if password == confirm_password:
-            if User.objects.filter(username=username).exists():
-                messages.error(request, 'Usuário já existe.')
-            elif User.objects.filter(email=email).exists():
-                messages.error(request, 'E-mail já cadastrado.')
-            else:
-                user = User.objects.create_user(username=username, email=email, password=password)
-                user.save()
-                messages.success(request, 'Conta criada com sucesso! Faça login.')
-                return redirect('login')  
-        else:
-            messages.error(request, 'As senhas não coincidem.')
-    return render(request, 'cadastro.html')
-
-@login_required  
-def menu_view(request):
-    return render(request, 'menu.html', {'username': request.user.username})
-
+# Checklist de sintomas do usuário
 @login_required
 def checklist_view(request):
     sintomas_comuns = ['Febre', 'Dor de cabeça', 'Dor de garganta', 'Tosse', 'Falta de ar', 'Cansaço', 
@@ -186,6 +103,7 @@ def checklist_view(request):
         else:
             dor = int(dor)  
         
+        # Salva sintomas do user no banco de dados
         sintomas_usuario = SintomasUsuario(
             usuario=request.user, 
             sintomas=', '.join(sintomas_selecionados),
@@ -202,6 +120,7 @@ def checklist_view(request):
     return render(request, 'checklist.html', {'sintomas_comuns': sintomas_comuns})
 
 
+# Lista os sintomas registrados
 class sintomas_view(View):
     def get(self, request):
         lista_consultas = SintomasUsuario.objects.filter(usuario=request.user)
@@ -211,6 +130,8 @@ class sintomas_view(View):
         }
         return render(request, "registros.html", context)
 
+
+# Exclui um registro de sintomas
 @login_required
 def delete_registro_view(request, id):
     registro = get_object_or_404(SintomasUsuario, id=id, usuario=request.user)
@@ -222,6 +143,8 @@ def delete_registro_view(request, id):
 
     return render(request, 'confirmar_exclusao.html', {'registro': registro})
 
+
+# Exibe a localização das UPAs
 class LocalView(View):
     def get(self, request):
         bairros = Bairros.objects.all()
@@ -242,9 +165,56 @@ class LocalView(View):
         bairro_id = request.POST.get('bairros')
         local_id = request.POST.get('locais')
 
-        # Verifique se os IDs são válidos
         bairros = Bairros.objects.get(id=bairro_id)
         locais = Locais.objects.get(id=local_id)
 
-        return redirect('saude:menu')  # Altere para a URL desejada
-    
+        return redirect('saude:menu')  
+
+
+##################################################
+
+
+# Login
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            messages.success(request, 'Autenticado com sucesso.')
+            return redirect('saude:menu')  
+        else:
+            messages.error(request, 'Nome de usuário ou senha incorretos.')
+
+    return render(request, 'login.html')
+
+
+# Cadastro
+def cadastro_view(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        confirm_password = request.POST.get('confirm_password')
+
+        if password == confirm_password:
+            if User.objects.filter(username=username).exists():
+                messages.error(request, 'Usuário já existe.')
+            elif User.objects.filter(email=email).exists():
+                messages.error(request, 'E-mail já cadastrado.')
+            else:
+                user = User.objects.create_user(username=username, email=email, password=password)
+                user.save()
+                messages.success(request, 'Conta criada com sucesso! Faça login.')
+                return redirect('login')  
+        else:
+            messages.error(request, 'As senhas não coincidem.')
+    return render(request, 'cadastro.html')
+
+
+# Menu do usuário após login
+@login_required  
+def menu_view(request):
+    return render(request, 'menu.html', {'username': request.user.username})
