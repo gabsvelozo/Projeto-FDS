@@ -21,7 +21,6 @@ class HistoricoOnline(View):
         cirugias = request.POST.get("cirugias")
         alergias = request.POST.get("alergias")
 
-        # Nova instância de HistoricoMedico e salva no banco de dados
         historico = HistoricoMedico(
             nome=nome, 
             idade=idade, 
@@ -69,7 +68,9 @@ class AgendamentoView(View):
             data=data
         )
         consulta.save()
-        return redirect('saude:menu')
+
+        messages.success(request, 'Agendamento marcado com sucesso!')
+        return redirect('saude:menu') 
 
 
 # Listar consultas do usuário

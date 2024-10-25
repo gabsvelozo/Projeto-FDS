@@ -3,105 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Localização</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SaúdeTec - Localização</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    {% load static %}
 </head>
-<body class="bg-gray-100 items-center justify-center min-h-screen">
-    <div style="display: none;">
-        {% load static %}
-     </div>
-    <nav class="bg-blue-500 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center">
-                    <a href="{% url 'saude:menu' %}" class="flex items-center">
-                        <img class="h-24 object-cover text-center" src="{% static '/saudetec1.png' %}" alt="SaúdeTec Logo">
-                        <span class="ml-2 text-xl font-bold">SaúdeTec</span>
-                    </a>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="{% url 'saude:consultas' %}" class="flex items-center text-white hover:bg-[#5a95f5] px-3 py-2 rounded-md text-sm font-medium">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-6 8h6m-6 4h6m-6 4h6m2-2a2 2 0 002-2V7a2 2 0 00-2-2h-2V3a1 1 0 00-1-1h-6a1 1 0 00-1 1v2H6a2 2 0 00-2 2v10a2 2 0 002 2h2z" />
-                            </svg>
-                            Consultas
-                        </a>
-                        <a href="{% url 'saude:agendamento' %}" class="flex items-center text-white hover:bg-[#5a95f5] px-3 py-2 rounded-md text-sm font-medium">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2h6v2m0 4H9a2 2 0 01-2-2v-2a2 2 0 012-2h6a2 2 0 012 2v2a2 2 0 01-2 2zm-4-8v-4a4 4 0 118 0v4" />
-                            </svg>
-                            Agendamento
-                        </a>
-                    </div>
-                </div>
-                <div class="md:hidden">
-                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-[#5a95f5] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-                        <span class="sr-only">Abrir menu principal</span>
-                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="md:hidden hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="{% url 'saude:consultas' %}" class="flex items-center text-white hover:bg-[#5a95f5] block px-3 py-2 rounded-md text-base font-medium">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-6 8h6m-6 4h6m-6 4h6m2-2a2 2 0 002-2V7a2 2 0 00-2-2h-2V3a1 1 0 00-1-1h-6a1 1 0 00-1 1v2H6a2 2 0 00-2 2v10a2 2 0 002 2h2z" />
-                    </svg>
-                    Consultas
-                </a>
-                <a href="{% url 'saude:agendamento' %}" class="flex items-center text-white hover:bg-[#5a95f5] block px-3 py-2 rounded-md text-base font-medium">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2h6v2m0 4H9a2 2 0 01-2-2v-2a2 2 0 012-2h6a2 2 0 012 2v2a2 2 0 01-2 2zm-4-8v-4a4 4 0 118 0v4" />
-                    </svg>
-                    Agendamento
-                </a>
-            </div>
-        </div>
-    </nav>
-    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-3xl my-8 mx-auto">
-        <h1 class="text-3xl font-bold mb-6 text-center">Selecione um Bairro</h1>
 
-        <form method="GET" class="mb-6">
-            <label for="bairro-select" class="block mb-2 text-lg">Escolha um bairro:</label>
-            <select name="bairro" id="bairro-select" class="w-full px-4 py-2 border rounded-lg mb-4">
-                <option value="">Selecione um bairro</option>
-                {% for bairro in bairros %}
-                    <option value="{{ bairro.id }}">{{ bairro.nome }}</option>
-                {% endfor %}
-            </select>
-            <div class="px-4">
-                <button type="submit" class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 text-lg transform hover:scale-110 transition duration-400 ease-in-out">Buscar Locais</button>
-            </div>
-        </form>
+<body class="bg-gray-100 text-gray-800">
+    {% include 'navbar.html' %}  
 
-        <div id="informacoes">
-            {% if upas %}
-                <h2 class="text-2xl font-bold mb-4">Locais disponíveis:</h2>
-                {% for local in upas %}
-                    <div class="tela mb-4 p-4 border rounded-lg shadow">
-                        <h3 class="text-xl font-semibold">{{ local.nome }}</h3>
-                        <p class="text-gray-600">{{ local.descricao }}</p>
-                        {% for info in local.info_local_set.all %}
-                            <p class="text-gray-600">{{ info.nome }}</p>
+    <div class="max-w-2xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <div class="bg-[#4285F4] text-white py-4 px-6">
+                <h1 class="text-2xl font-bold text-center">Selecione um Bairro</h1>
+            </div>
+            <div class="p-6">
+                <form method="GET" class="space-y-6">
+                    <label for="bairro-select" class="block text-sm font-medium text-gray-700">Escolha um bairro:</label>
+                    <select name="bairro" id="bairro-select" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-[#4285F4] focus:border-[#4285F4] sm:text-sm rounded-md">
+                        <option value="">Selecione um bairro</option>
+                        {% for bairro in bairros %}
+                            <option value="{{ bairro.id }}">{{ bairro.nome }}</option>
                         {% endfor %}
-                        <form method="POST" action="{% url 'saude:localizacao' %}">
-                            {% csrf_token %}
-                            <input type="hidden" name="bairros" value="{{ local.bairro.id }}">
-                            <input type="hidden" name="locais" value="{{ local.id }}">
-                        </form>
-                    </div>
-                {% endfor %}
-            {% else %}
-            {% endif %}
-        </div>
+                    </select>
 
-        <div class="mt-4 text-center">
-            <p class="text-lg">Quer voltar ao menu? <a href="{% url 'saude:menu' %}" class="text-blue-500 underline"> Clique aqui</a>.</p>
+                    <div class="px-4">
+                        <button type="submit" class="w-full flex justify-center py-2 px-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#4285F4] hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4285F4] transform hover:scale-110 transition duration-400 ease-in-out">
+                            Buscar Locais
+                        </button>
+                    </div>
+                </form>
+
+                <div id="informacoes" class="mt-6"> <!-- Adicionando margem superior aqui -->
+                    {% if upas %}
+                        <h2 class="text-2xl font-bold mb-4">Locais disponíveis:</h2>
+                        {% for local in upas %}
+                            <div class="tela mb-4 p-4 border rounded-lg shadow">
+                                <h3 class="text-xl font-semibold">{{ local.nome }}</h3>
+                                <p class="text-gray-600">{{ local.descricao }}</p>
+                                {% for info in local.info_local_set.all %}
+                                    <p class="text-gray-600">{{ info.nome }}</p>
+                                {% endfor %}
+                                <form method="POST" action="{% url 'saude:localizacao' %}">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="bairros" value="{{ local.bairro.id }}">
+                                    <input type="hidden" name="locais" value="{{ local.id }}">
+                                </form>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p class="text-gray-600">Nenhum local disponível.</p>
+                    {% endif %}
+                </div>
+            </div>
         </div>
     </div>
+
+    <script>
+        const mobileMenuButton = document.querySelector('[aria-controls="mobile-menu"]');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+            mobileMenuButton.setAttribute('aria-expanded', String(!expanded));
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>

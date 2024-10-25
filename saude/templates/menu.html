@@ -6,7 +6,29 @@
     <title>Menu</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 flex items-center justify-center h-screen">
+
+<body class="bg-gray-100">
+
+<!-- Navbar -->
+<div style="display: none;">
+    {% load static %}
+</div>
+
+<nav class="bg-[#4285F4] text-white" style="background-color: #4285F4 !important;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <div class="flex items-center">
+                <a href="{% url 'saude:menu' %}" class="flex items-center">
+                    <img class="h-24 object-cover text-center" src="{% static 'saudetec1.png' %}" alt="SaúdeTec Logo">
+                    <span class="ml-2 text-xl font-bold">SaúdeTec</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+ 
+
     <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md my-8 mx-auto ">
         {% if messages %}
             <div class="mb-4">
@@ -42,7 +64,7 @@
                 <a href="{% url 'saude:checklist' %}" class="block bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 text-center transform hover:scale-110 transition duration-400 ease-in-out">Marcar os seus sintomas</a>
             </li>
             <li class="mb-4">
-                <a href="{% url 'saude:registros' %}" class="block bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 text-center transform hover:scale-110 transition duration-400 ease-in-out">Ver meus registros</a>
+                <a href="{% url 'saude:registros' %}" class="block bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 text-center transform hover:scale-110 transition duration-400 ease-in-out">Ver meus sintomas</a>
             </li>
             <li class="mb-4">
                 <a href="{% url 'saude:localizacao' %}" class="block bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 text-center transform hover:scale-110 transition duration-400 ease-in-out">Localização de centros de saúde</a>

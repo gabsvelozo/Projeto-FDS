@@ -3,110 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Histórico Médico Online</title>
+    <title>SaúdeTec - Histórico Médico Digital</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 items-center justify-center min-h-screen">
-    <div style="display: none;">
-        {% load static %}
-     </div>
-    <nav class="bg-[#4285F4] text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center">
-                    <a href="{% url 'saude:menu' %}" class="flex items-center">
-                        <img class="h-24 object-cover text-center" src="{% static '/saudetec1.png' %}" alt="SaúdeTec Logo">
-                        <span class="ml-2 text-xl font-bold">SaúdeTec</span>
-                    </a>
+<body class="bg-gray-100 text-gray-800">
+    {% include 'navbar.html' %}  
+
+    <div class="max-w-2xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <div class="bg-[#4285F4] text-white py-4 px-6">
+                {% if messages %}
+                <div class="mb-4">
+                    {% for message in messages %}
+                        <div class="p-4 mb-4 text-sm 
+                            {% if message.tags == 'success' %} 
+                                text-green-700 bg-green-100 
+                            {% elif message.tags == 'error' %} 
+                                text-red-700 bg-red-100 
+                            {% else %} 
+                                text-gray-700 bg-gray-100 
+                            {% endif %} 
+                            rounded-lg">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
                 </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="{% url 'saude:consultas' %}" class="flex items-center text-white hover:bg-[#5a95f5] px-3 py-2 rounded-md text-sm font-medium">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-6 8h6m-6 4h6m-6 4h6m2-2a2 2 0 002-2V7a2 2 0 00-2-2h-2V3a1 1 0 00-1-1h-6a1 1 0 00-1 1v2H6a2 2 0 00-2 2v10a2 2 0 002 2h2z" />
-                            </svg>
-                            Consultas
-                        </a>
-                        <a href="{% url 'saude:agendamento' %}" class="flex items-center text-white hover:bg-[#5a95f5] px-3 py-2 rounded-md text-sm font-medium">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2h6v2m0 4H9a2 2 0 01-2-2v-2a2 2 0 012-2h6a2 2 0 012 2v2a2 2 0 01-2 2zm-4-8v-4a4 4 0 118 0v4" />
-                            </svg>
-                            Agendamento
-                        </a>
-                    </div>
-                </div>
-                <div class="md:hidden">
-                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-[#5a95f5] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-                        <span class="sr-only">Abrir menu principal</span>
-                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
+            {% endif %}            
+                <h1 class="text-2xl font-bold text-center">Histórico Médico Digital</h1>
             </div>
+
+            <form action="{% url 'saude:menu' %}" method="POST" class="space-y-4 px-6 py-6">
+                {% csrf_token %}
+                <div>
+                    <label for="nome" class="block text-lg font-medium text-gray-700">Nome:</label>
+                    <input type="text" name="nome" id="nome" placeholder="Digite seu nome" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg">
+                </div>
+
+                <div>
+                    <label for="idade" class="block text-lg font-medium text-gray-700">Idade:</label>
+                    <input type="number" name="idade" id="idade" placeholder="Digite sua idade" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg">
+                </div>
+
+                <div>
+                    <label for="medicacao" class="block text-lg font-medium text-gray-700">Medicações:</label>
+                    <textarea name="medicacao" id="medicacao" rows="3" placeholder="Digite os nomes dos remédios que você toma" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg"></textarea>
+                </div>
+
+                <div>
+                    <label for="doencas" class="block text-lg font-medium text-gray-700">Doenças Pré-Existentes:</label>
+                    <textarea name="doencas" id="doencas" rows="3" placeholder="Digite se você tem alguma doença já identificada" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg"></textarea>
+                </div>
+
+                <div>
+                    <label for="cirurgias" class="block text-lg font-medium text-gray-700">Cirurgias:</label>
+                    <textarea name="cirurgias" id="cirurgias" rows="3" placeholder="Digite as cirurgias que você já realizou" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg"></textarea>
+                </div>
+
+                <div>
+                    <label for="alergias" class="block text-lg font-medium text-gray-700">Alergias:</label>
+                    <textarea name="alergias" id="alergias" rows="3" placeholder="Informe se você tem alguma alergia" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 text-lg transition ease-in-out duration-300">Enviar Histórico</button>
+            </form>
         </div>
-        <div class="md:hidden hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="{% url 'saude:consultas' %}" class="flex items-center text-white hover:bg-[#5a95f5] block px-3 py-2 rounded-md text-base font-medium">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-6 8h6m-6 4h6m-6 4h6m2-2a2 2 0 002-2V7a2 2 0 00-2-2h-2V3a1 1 0 00-1-1h-6a1 1 0 00-1 1v2H6a2 2 0 00-2 2v10a2 2 0 002 2h2z" />
-                    </svg>
-                    Consultas
-                </a>
-                <a href="{% url 'saude:agendamento' %}" class="flex items-center text-white hover:bg-[#5a95f5] block px-3 py-2 rounded-md text-base font-medium">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2h6v2m0 4H9a2 2 0 01-2-2v-2a2 2 0 012-2h6a2 2 0 012 2v2a2 2 0 01-2 2zm-4-8v-4a4 4 0 118 0v4" />
-                    </svg>
-                    Agendamento
-                </a>
-            </div>
-        </div>
-    </nav>
-    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg mx-auto my-8">
-        <h1 class="text-3xl font-bold mb-6 text-center">Histórico médico digital</h1>
-        
-        <form action="{% url 'saude:menu' %}" method="POST" class="space-y-4">
-            {% csrf_token %}
-            
-            <div>
-                <label for="nome" class="block text-lg font-medium text-gray-700">Nome:</label>
-                <input type="text" name="nome" id="nome" placeholder="Digite seu nome" 
-                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg">
-            </div>
-
-            <div>
-                <label for="idade" class="block text-lg font-medium text-gray-700">Idade:</label>
-                <input type="number" name="idade" id="idade" placeholder="Digite sua idade" 
-                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg">
-            </div>
-
-            <div>
-                <label for="medicacao" class="block text-lg font-medium text-gray-700">Medicações:</label>
-                <textarea name="medicacao" id="medicacao" rows="3" placeholder="Digite os nomes dos remédios que você toma" 
-                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg"></textarea>
-            </div>
-
-            <div>
-                <label for="doencas" class="block text-lg font-medium text-gray-700">Doenças Pré-Existentes:</label>
-                <textarea name="doencas" id="doencas" rows="3" placeholder="Digite se você tem alguma doença já identificada" 
-                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg"></textarea>
-            </div>
-
-            <div>
-                <label for="cirugias" class="block text-lg font-medium text-gray-700">Cirurgias:</label>
-                <textarea name="cirugias" id="cirugias" rows="3" placeholder="Se você já fez alguma cirurgia, digite qual" 
-                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg"></textarea>
-            </div>
-
-            <div>
-                <label for="alergias" class="block text-lg font-medium text-gray-700">Alergias:</label>
-                <textarea name="alergias" id="alergias" rows="3" placeholder="Se você já tem alguma alergia, digite qual" 
-                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg"></textarea>
-            </div>
-
-            <button type="submit" class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 text-lg transform hover:scale-110 transition duration-400 ease-in-out">Enviar</button>
-        </form>
     </div>
 </body>
 </html>
