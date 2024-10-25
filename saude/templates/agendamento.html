@@ -27,7 +27,7 @@
                     </div>
 
                     <div>
-                        <label for="especialidade" class="block text-sm font-medium text-gray-700">Especialidade:</label>
+                        <label for="especialidade" class="block text-md font-medium text-gray-700">Especialidade:</label>
                         <select id="especialidade" name="especialidade" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-[#4285F4] focus:border-[#4285F4] text-base bg-gray-50">
                             {% for especialidade in especialidades %}
                                 <option value="{{ especialidade.id }}">{{ especialidade.nome }}</option>
@@ -36,7 +36,7 @@
                     </div>
 
                     <div>
-                        <label for="local" class="block text-sm font-medium text-gray-700">Local:</label>
+                        <label for="local" class="block text-md font-medium text-gray-700">Local:</label>
                         <select id="local" name="local" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-[#4285F4] focus:border-[#4285F4] text-base bg-gray-50">
                             {% for local in locais %}
                                 <option value="{{ local.id }}">{{ local.nome }}</option>
@@ -45,12 +45,12 @@
                     </div>
 
                     <div>
-                        <label for="data" class="block text-sm font-medium text-gray-700">Data:</label>
+                        <label for="data" class="block text-md font-medium text-gray-700">Data:</label>
                         <input type="date" id="data" name="data" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-[#4285F4] focus:border-[#4285F4] text-base bg-gray-50">
                     </div>
 
                     <div class="px-4">
-                        <button type="submit" class="w-full flex justify-center py-2 px-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#4285F4] hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4285F4] transform hover:scale-110 transition duration-400 ease-in-out">
+                        <button type="submit" class="w-full flex justify-center py-2 px-2 border border-transparent rounded-md shadow-sm text-md font-medium text-white bg-[#4285F4] hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4285F4] transform hover:scale-110 transition duration-400 ease-in-out">
                             Agendar
                         </button>
                     </div>
