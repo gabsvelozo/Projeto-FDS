@@ -42,10 +42,9 @@
                 </div>
 
                 <!-- Formulário para exclusão da consulta -->
-                <form action="{% url 'saude:delete_consulta' consulta.id %}" method="post">
-                  {% csrf_token %}
-                  <button type="submit" class="text-red-500 hover:text-red-700" title="Excluir">X</button>
-                </form>
+                  <div>
+                    <a href="{% url 'saude:delete_consulta' consulta.id %}" class="text-red-500 hover:text-red-700" title="Excluir">X</a>
+                  </div>
               </div>
             {% endfor %}
           {% else %}

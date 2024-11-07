@@ -148,14 +148,14 @@ def delete_registro_view(request, id):
 
 @login_required
 def delete_consulta_view(request, id):
-    consultas = get_object_or_404(Consulta, id=id, usuario=request.user) #mudei agora
+    consulta = get_object_or_404(Consulta, id=id, usuario=request.user) #mudei agora
 
     if request.method == 'POST':
-        consultas.delete()
+        consulta.delete()
         messages.success(request, 'Consulta excluída com sucesso!')
         return redirect('saude:consultas')
 
-    return render(request, 'confirmar_exclusao_consulta.html', {'consultas': consultas})
+    return render(request, 'confirmar_exclusao_consultas.html', {'consulta': consulta})
 
 # Exibe a localização das UPAs
 class LocalView(View):
