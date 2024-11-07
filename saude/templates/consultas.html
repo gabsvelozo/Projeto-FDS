@@ -7,8 +7,17 @@
     <title>Consultas - SaúdeTec</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
+  <!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Consultas - SaúdeTec</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
   <body class="bg-gray-100 text-gray-800">
-    {% include 'navbar.html' %}  
+    {% include 'navbar.html' %}
 
     <div class="md:hidden hidden" id="mobile-menu">
       <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
@@ -23,13 +32,25 @@
           <h1 class="text-2xl font-bold text-center">Suas Consultas</h1>
         </div>
         <div class="p-6 space-y-4">
-          {% for consulta in consultas %}
-          <div class="border rounded-md p-4 bg-gray-50">
-            <p><strong>Especialidade:</strong> {{ consulta.especialidade.nome }}</p>
-            <p><strong>Local:</strong> {{ consulta.local.nome }}</p>
-            <p><strong>Data:</strong> {{ consulta.data }}</p>
-          </div>
-          {% endfor %}
+          {% if consultas %}
+            {% for consulta in consultas %}
+              <div class="border rounded-md p-4 bg-gray-50 flex justify-between items-center">
+                <div>
+                  <p><strong>Especialidade:</strong> {{ consulta.especialidade.nome }}</p>
+                  <p><strong>Local:</strong> {{ consulta.local.nome }}</p>
+                  <p><strong>Data:</strong> {{ consulta.data }}</p>
+                </div>
+
+                <!-- Formulário para exclusão da consulta -->
+                <form action="{% url 'saude:delete_consulta' consulta.id %}" method="post">
+                  {% csrf_token %}
+                  <button type="submit" class="text-red-500 hover:text-red-700" title="Excluir">X</button>
+                </form>
+              </div>
+            {% endfor %}
+          {% else %}
+            <p class="text-gray-700 text-center">Você ainda não marcou nenhuma consulta.</p>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -37,7 +58,7 @@
     <script>
       const mobileMenuButton = document.querySelector('[aria-controls="mobile-menu"]');
       const mobileMenu = document.getElementById('mobile-menu');
-      
+
       mobileMenuButton.addEventListener('click', () => {
         const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
         mobileMenuButton.setAttribute('aria-expanded', String(!expanded));

@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path # type: ignore
 from saude.views import AgendamentoView, ConsultasView, LocalView
 from . import views
 
@@ -15,6 +15,7 @@ urlpatterns = [
     path('checklist/', views.checklist_view, name='checklist'),
     path('registros/', views.sintomas_view.as_view(), name='registros'), 
     path('registros/delete/<int:id>/', views.delete_registro_view, name='delete_registro'),
+    path('consultas/delete/<int:id>/', views.delete_consulta_view, name='delete_consulta'),
     path('localizacao/', LocalView.as_view(), name='localizacao'),
 
 ]
