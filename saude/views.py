@@ -188,24 +188,24 @@ class Locais_PostoView(View):
     def get(self, request):
         bairro_posto = PostosBairro.objects.all()
         posto = None
-        bairro_id = request.GET.get('bairro')
+        posto_bairro_id = request.GET.get('bairro')
         
-        if bairro_id:
-            posto = Endereco.objects.filter(bairro_id=bairro_id).prefetch_related('horario_set')
+        if posto_bairro_id:
+            posto = Endereco.objects.filter(posto_bairro_id=posto_bairro_id).prefetch_related('horario_set')
 
         context = {
             'bairro_posto': bairro_posto,
             'posto': posto,
-            'bairro_id': bairro_id,
+            'posto_bairro_id': posto_bairro_id,
         }
 
         return render(request, 'vacinas.html', context)
     
     def post(self, request):
-        bairro_id = request.POST.get('bairro')
+        posto_bairro_id = request.POST.get('bairro')
         posto_id = request.POST.get('posto')
 
-        postos = PostosBairro.objects.get(id=bairro_id)
+        postos = PostosBairro.objects.get(id=posto_bairro_id)
         endereco = Endereco.objects.get(id=posto_id)
 
         return redirect('saude:menu')  
