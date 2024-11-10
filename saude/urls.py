@@ -1,6 +1,6 @@
 from django.urls import path # type: ignore
-from saude.views import AgendamentoView, ConsultasView, LocalView, Locais_PostoView
-from . import views
+from SaudeTec.views import AgendamentoView, ConsultasView, LocalView, Locais_PostoView
+from ..SaudeTec import views
 
 app_name = 'saude'
 

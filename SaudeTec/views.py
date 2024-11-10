@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
-from .models import HistoricoMedico, SintomasUsuario
+from ..saude.models import HistoricoMedico, SintomasUsuario
 from django.contrib.auth import authenticate, login as lg, login
 from django.contrib.auth.models import User
 from saude.models import Especialidade, Local, Consulta, Bairros, Locais, PostosBairro, Endereco
