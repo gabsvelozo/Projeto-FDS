@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>SaúdeTec - Localização</title>
+    <title>SaúdeTec - Postos de vacinação</title>
     <script src="https://cdn.tailwindcss.com"></script>
     {% load static %}
 </head>
@@ -22,31 +22,31 @@
                     <label for="bairro-select" class="block text-lg font-medium text-gray-700">Escolha um bairro:</label>
                     <select name="bairro" id="bairro-select" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-[#4285F4] focus:border-[#4285F4] text-base bg-gray-50">
                         <option value="">Selecione um bairro</option>
-                        {% for bairro in bairros %}
+                        {% for bairro in bairro_posto %}
                             <option value="{{ bairro.id }}">{{ bairro.nome }}</option>
                         {% endfor %}
                     </select>
 
                     <div class="px-4">
                         <button type="submit" class="w-full flex justify-center py-2 px-2 border border-transparent rounded-md shadow-sm text-md font-medium text-white bg-[#4285F4] hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4285F4] transform hover:scale-110 transition duration-400 ease-in-out">
-                            Buscar Locais
+                            Buscar Postos
                         </button>
                     </div>
                 </form>
 
                 <div id="informacoes" class="mt-6"> <!-- Adicionando margem superior aqui -->
-                    {% if upas %}
+                    {% if posto %}
                         <h2 class="text-2xl font-bold mb-4">Locais disponíveis:</h2>
-                        {% for local in upas %}
+                        {% for local in posto %}
                             <div class="tela mb-4 p-4 border rounded-lg shadow">
                                 <h3 class="text-xl font-semibold">{{ local.nome }}</h3>
                                 <p class="text-gray-600">{{ local.descricao }}</p>
-                                {% for info in local.info_local_set.all %}
+                                {% for info in local.horario_set.all %}
                                     <p class="text-gray-600">{{ info.nome }}</p>
                                 {% endfor %}
-                                <form method="POST" action="{% url 'saude:localizacao' %}">
+                                <form method="POST" action="{% url 'saude:vacinas' %}">
                                     {% csrf_token %}
-                                    <input type="hidden" name="bairros" value="{{ local.bairro.id }}">
+                                    <input type="hidden" name="bairros" value="{{ local.posto_bairro.id }}">
                                     <input type="hidden" name="locais" value="{{ local.id }}">
                                 </form>
                             </div>

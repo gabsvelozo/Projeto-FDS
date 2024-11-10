@@ -3,7 +3,7 @@ from django.views import View
 from .models import HistoricoMedico, SintomasUsuario
 from django.contrib.auth import authenticate, login as lg, login
 from django.contrib.auth.models import User
-from saude.models import Especialidade, Local, Consulta, Bairros, Locais
+from saude.models import Especialidade, Local, Consulta, Bairros, Locais, PostosBairro, Endereco
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -171,8 +171,33 @@ class LocalView(View):
 
         return redirect('saude:menu')  
 
+# Exibe a localização dos postos de saúde e informações de horários     
+class Locais_PostoView(View):
+    def get(self, request):
+        bairro_posto = PostosBairro.objects.all()
+        posto = None
+        bairro_id = request.GET.get('bairro')
+        
+        if bairro_id:
+            posto = Endereco.objects.filter(bairro_id=bairro_id).prefetch_related('horario_set')
 
-##################################################
+        context = {
+            'bairro_posto': bairro_posto,
+            'posto': posto,
+            'bairro_id': bairro_id,
+        }
+
+        return render(request, 'vacinas.html', context)
+    
+    def post(self, request):
+        bairro_id = request.POST.get('bairro')
+        posto_id = request.POST.get('posto')
+
+        postos = PostosBairro.objects.get(id=bairro_id)
+        endereco = Endereco.objects.get(id=posto_id)
+
+        return redirect('saude:menu')  
+
 
 
 # Login

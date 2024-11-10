@@ -83,3 +83,28 @@ class Info_local(models.Model):
 
     def __str__(self):
         return self.nome
+
+# Representa um bairro onde os postos de saúde estão localizados
+class PostosBairro(models.Model):
+    nome = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nome
+
+
+# Locais específicos dos postos de saúde dentro de um bairro
+class Endereco(models.Model):
+    nome = models.CharField(max_length=100)
+    posto_bairro = models.ForeignKey(PostosBairro, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.nome
+
+
+# Informações adicionais sobre os locais das UPAs
+class Horario(models.Model):
+    nome = models.TextField(blank=True, null=True)
+    posto_horario = models.ForeignKey(Endereco, on_delete=models.CASCADE, default=1)
+
+    def __str__(self):
+        return self.nome
