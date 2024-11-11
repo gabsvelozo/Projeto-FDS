@@ -1,4 +1,15 @@
 describe('pontos de vacinação da região',()=> {
+    beforeEach(() => {
+        cy.visit('/');
+        cy.get('#username').type('gabi')
+        cy.wait(100)
+
+        cy.get('#password').type('gabi')
+        cy.wait(100)
+
+        cy.get('.bg-blue-500').click()
+        cy.wait(100)
+    });
     it('Vacinas em Boa Viagem', ()=> {
         cy.visit('/vacinas/');
         cy.wait(1000)

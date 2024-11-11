@@ -1,14 +1,18 @@
 describe('agendamento de consultas',()=> {
-    it('agendamento de consultas de forma certa', ()=> {
+    beforeEach(() => {
         cy.visit('/');
         cy.get('#username').type('gabi')
-        cy.wait(1000)
+        cy.wait(100)
 
         cy.get('#password').type('gabi')
-        cy.wait(1000)
+        cy.wait(100)
 
         cy.get('.bg-blue-500').click()
-        cy.wait(1000)
+        cy.wait(100)
+    });
+    it('agendamento de consultas de forma certa', ()=> {
+        cy.visit('/');
+
 
         cy.get(':nth-child(2) > .block').click()
         cy.wait(1000)
@@ -21,7 +25,7 @@ describe('agendamento de consultas',()=> {
 
         cy.get('#data').click()
         cy.wait(1000)
-        
+
         cy.get('.px-4 > .w-full').click()
         cy.wait(1000)
     })  
