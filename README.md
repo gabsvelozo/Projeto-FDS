@@ -55,7 +55,7 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 - **Visualizaçao da checklist** como usuário, gostaria de acompanhar e excluir os registros feitos pelo meu paciente na checklist.
 - **Visualizaçao da data da consulta marcada** Como usuária, eu quero ter a disponibilidade de visualizar as datas das consultas
 - **Visualizaçao a especialidade da consulta marcada** Como usuário, gostaria de poder visualizar qual foi a especialidade que escolhi para a minha consulta
-- - **Visualizaçao do local das consulta marcada** Como usuário, gostaria de poder visualizar qual foi o local que escolhi para ser atendida na minha consulta
+- **Visualizaçao do local das consulta marcada** Como usuário, gostaria de poder visualizar qual foi o local que escolhi para ser atendida na minha consulta
   
 <img src="https://camo.githubusercontent.com/2722992d519a722218f896d5f5231d49f337aaff4514e78bd59ac935334e916a/68747470733a2f2f692e696d6775722e636f6d2f77617856496d762e706e67" width="750px" height="5px"/>
 
@@ -110,28 +110,28 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 
 ## Issues
 
-Atualização do protótipo Lo-Fi
-Screencast do Lo-Fi
-Website do Azure
-Screencast dos testes
-Screencast da build
+[Atualização do protótipo Lo-Fi]
+[Screencast do Lo-Fi]
+[Website do Azure]
+[Screencast dos testes]
+[Screencast da build]
 
 # Intalação
 ## 1. Clone o repositório e abra a pasta
-git clone https://github.com/gabsvelozo/SaudeTec.git
-cd SaudeTec
+- git clone https://github.com/gabsvelozo/SaudeTec.git
+- cd SaudeTec
 ## 2. Crie e ative um ambiente virtual
-py -m venv venv
-venv\Scripts\Activate
+- py -m venv venv
+- venv\Scripts\Activate
 ## 3. Instale as dependências
-python.exe -m pip install --upgrade pip
-pip install -r requirements.txt
+- python.exe -m pip install --upgrade pip
+- pip install -r requirements.txt
 ## 4. Faça o migrate
-py manage.py migrate
+- py manage.py migrate
 ## 5. Ativar o servidor
-py manage.py runserver
+- py manage.py runserver
 ## 6. Abrindo no navegador
-clique no  http://127.0.0.1:8000/ e será direcionado para uma página web
+- clique no  http://127.0.0.1:8000/ e será direcionado para uma página web
 
 # Equipe:
 
