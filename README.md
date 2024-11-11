@@ -59,7 +59,7 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
   
 <img src="https://camo.githubusercontent.com/2722992d519a722218f896d5f5231d49f337aaff4514e78bd59ac935334e916a/68747470733a2f2f692e696d6775722e636f6d2f77617856496d762e706e67" width="750px" height="5px"/>
 
-## Entrega 01
+# Entrega 01
 
 ## Quadro Backlog JIRA:
 
@@ -71,7 +71,7 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 
 <img src="https://camo.githubusercontent.com/2722992d519a722218f896d5f5231d49f337aaff4514e78bd59ac935334e916a/68747470733a2f2f692e696d6775722e636f6d2f77617856496d762e706e67" width="750px" height="5px"/>
 
-## Entrega 02
+# Entrega 02
 
 ## Quadro Backlog JIRA:
 
@@ -87,7 +87,7 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 
 <img src="https://camo.githubusercontent.com/2722992d519a722218f896d5f5231d49f337aaff4514e78bd59ac935334e916a/68747470733a2f2f692e696d6775722e636f6d2f77617856496d762e706e67" width="750px" height="5px"/>
 
-## Entrega 03
+# Entrega 03
 
 ## Sprint do Jira: 
 ![Entrega 3](https://github.com/user-attachments/assets/2b63145a-60ce-47f6-9f9d-a9d3f11f7cfe)
@@ -102,7 +102,7 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 [Screencast do Azure](https://youtu.be/TjiBrgFAjiQ)<br>
 [Screencast dos testes](https://youtu.be/5YEgpYKPeYY)<br>
 
-## Entrega 04
+# Entrega 04
 
 ## Sprint do Jira:
 
@@ -116,24 +116,24 @@ Website do Azure
 Screencast dos testes
 Screencast da build
 
-## Intalação
-# 1. Clone o repositório e abra a pasta
+# Intalação
+## 1. Clone o repositório e abra a pasta
 git clone https://github.com/gabsvelozo/SaudeTec.git
 cd SaudeTec
-# 2. Crie e ative um ambiente virtual
+## 2. Crie e ative um ambiente virtual
 py -m venv venv
 venv\Scripts\Activate
-# 3. Instale as dependências
+## 3. Instale as dependências
 python.exe -m pip install --upgrade pip
 pip install -r requirements.txt
-# 4. Faça o migrate
+## 4. Faça o migrate
 py manage.py migrate
-# 5. Ativar o servidor
+## 5. Ativar o servidor
 py manage.py runserver
-# 6. Abrindo no navegador
+## 6. Abrindo no navegador
 clique no  http://127.0.0.1:8000/ e será direcionado para uma página web
 
-## Equipe:
+# Equipe:
 
 - Gabrielle Mastellari (gmv2@cesar.school)
 - Maria Clara Neves (mcsan@cesar.school)
