@@ -1,8 +1,4 @@
-<!-- Navbar -->
-<div style="display: none;">
-    {% load static %}
-</div>
-
+{% load static %} 
 <nav class="bg-[#4285F4] text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
@@ -14,13 +10,19 @@
             </div>
             <div class="hidden md:block">
                 <div class="ml-10 flex items-baseline space-x-4">
+                    <a href="{% url 'saude:menu' %}" class="flex items-center text-white hover:bg-[#5a95f5] px-3 py-2 rounded-md text-sm font-medium">Home</a>
                     <a href="{% url 'saude:historico_form' %}" class="flex items-center text-white hover:bg-[#5a95f5] px-3 py-2 rounded-md text-sm font-medium">Histórico</a>
                     <a href="{% url 'saude:agendamento' %}" class="flex items-center text-white hover:bg-[#5a95f5] px-3 py-2 rounded-md text-sm font-medium">Agendamento</a>
                     <a href="{% url 'saude:checklist' %}" class="flex items-center text-white hover:bg-[#5a95f5] px-3 py-2 rounded-md text-sm font-medium">Checklist</a>
-                    <a href="{% url 'saude:localizacao' %}" class="flex items-center text-white hover:bg-[#5a95f5] px-3 py-2 rounded-md text-sm font-medium">Localização</a>
 
-                    <div class="relative inline-block text-left">
-                        <span class="flex items-center cursor-pointer px-3 py-2 rounded-md text-sm font-medium">Ver Meus Registros</span>
+                    <div class="relative inline-block text-left" id="localizacoes-dropdown"> <span class="flex items-center cursor-pointer px-3 py-2 rounded-md text-sm font-medium">Localizações</span>
+                        <div class="absolute hidden bg-white text-black rounded-md shadow-lg mt-1 z-10">
+                            <a href="{% url 'saude:localizar_doencas' %}" class="block px-4 py-2 text-sm hover:bg-gray-100">Doença por bairro</a>
+                            <a href="{% url 'saude:vacinas' %}" class="block px-4 py-2 text-sm hover:bg-gray-100">Centro de vacina</a>
+                            <a href="{% url 'saude:localizacao' %}" class="block px-4 py-2 text-sm hover:bg-gray-100">Centro de saúde</a>
+                        </div>
+                    </div>
+                    <div class="relative inline-block text-left" id="registros-dropdown"> <span class="flex items-center cursor-pointer px-3 py-2 rounded-md text-sm font-medium">Ver Meus Registros</span>
                         <div class="absolute hidden bg-white text-black rounded-md shadow-lg mt-1 z-10">
                             <a href="{% url 'saude:consultas' %}" class="block px-4 py-2 text-sm hover:bg-gray-100">Consultas</a>
                             <a href="{% url 'saude:registros' %}" class="block px-4 py-2 text-sm hover:bg-gray-100">Sintomas</a>
@@ -41,7 +43,32 @@
 </nav>
 
 <script>
-    const verMeusRegistros = document.querySelector('.relative');
+    const verMeusLocais = document.querySelector('#localizacoes-dropdown');
+    const dropdownm = verMeusLocais.querySelector('.absolute');
+
+    verMeusLocais.addEventListener('mouseenter', () => {
+        dropdownm.classList.remove('hidden');
+    });
+
+    verMeusLocais.addEventListener('mouseleave', () => {
+        setTimeout(() => {
+            if (!dropdownm.matches(':hover')) {
+                dropdownm.classList.add('hidden');
+            }
+        }, 200); 
+    });
+
+    dropdownm.addEventListener('mouseenter', () => {
+        dropdownm.classList.remove('hidden');
+    });
+
+    dropdownm.addEventListener('mouseleave', () => {
+        dropdownm.classList.add('hidden');
+    });
+</script>
+
+<script>
+    const verMeusRegistros = document.querySelector('#registros-dropdown');
     const dropdown = verMeusRegistros.querySelector('.absolute');
 
     verMeusRegistros.addEventListener('mouseenter', () => {

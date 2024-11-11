@@ -27,7 +27,6 @@
     </div>
 </nav>
 
- 
 
     <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md my-8 mx-auto ">
         {% if messages %}
@@ -47,6 +46,7 @@
                 {% endfor %}
             </div>
         {% endif %}
+    
         
         <h1 class="text-2xl text-center font-bold mb-6">Bem-vindo(a), {{ username }}!</h1>
         <h1 class="text-xl text-center font-bold mb-6">O que você procura?</h1>
@@ -70,7 +70,7 @@
                 <a href="{% url 'saude:localizacao' %}" class="block bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 text-center transform hover:scale-110 transition duration-400 ease-in-out">Localização de centros de saúde</a>
             </li>
             <li class="mb-4">
-                <a href="{% url 'saude:vacinas' %}" class="block bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 text-center transform hover:scale-110 transition duration-400 ease-in-out">Localização de Centros de Vacinação</a>
+                <a href="{% url 'saude:vacinas' %}" class="block bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 text-center transform hover:scale-110 transition duration-400 ease-in-out">Localização de centros de vacinação</a>
             </li>
             <li class="mb-4">
                 <a href="{% url 'saude:localizar_doencas' %}" class="block bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 text-center transform hover:scale-110 transition duration-400 ease-in-out">Localização de doenças por bairros</a>

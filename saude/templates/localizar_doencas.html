@@ -15,7 +15,7 @@
     <div class="max-w-2xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
         <div class="bg-white shadow-md rounded-lg overflow-hidden">
             <div class="bg-[#4285F4] text-white py-4 px-6">
-                <h1 class="text-2xl font-bold text-center">Selecione um Bairro</h1>
+                <h1 class="text-2xl font-bold text-center">Localização de Doenças</h1>
             </div>
             <div class="p-6">
                 <form method="GET" class="space-y-6">
@@ -38,7 +38,7 @@
 
                 <div id="informacoes" class="mt-6">
                     {% if doenca %}
-                    <h2 class="text-2xl font-bold mb-4">Locais disponíveis:</h2>
+                    <h2 class="text-2xl font-bold mb-4">Doenças localizadas na área:</h2>
                     {% for local in doenca %}
                         <div class="tela mb-4 p-4 border rounded-lg shadow">
                             <h3 class="text-xl font-semibold">{{ local.nome }}</h3>

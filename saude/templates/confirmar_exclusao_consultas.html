@@ -15,7 +15,7 @@
 
         <div class="flex justify-between">
             
-            <a href="{% url 'saude:consultas' %}" class="bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600">Cancelar</a> <!--saude:consultas?-->
+            <a href="{% url 'saude:menu' %}" class="bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600">Cancelar</a> 
 
             <form action="{% url 'saude:delete_consulta' consulta.id %}" method="post">
 

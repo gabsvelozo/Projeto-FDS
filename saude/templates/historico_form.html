@@ -5,34 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SaúdeTec - Histórico Médico Digital</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    
 </head>
 <body class="bg-gray-100 text-gray-800">
     {% include 'navbar.html' %}  
 
     <div class="max-w-2xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
         <div class="bg-white shadow-md rounded-lg overflow-hidden">
-            <div class="bg-[#4285F4] text-white py-4 px-6">
-                {% if messages %}
-                <div class="mb-4">
-                    {% for message in messages %}
-                        <div class="p-4 mb-4 text-sm 
-                            {% if message.tags == 'success' %} 
-                                text-green-700 bg-green-100 
-                            {% elif message.tags == 'error' %} 
-                                text-red-700 bg-red-100 
-                            {% else %} 
-                                text-gray-700 bg-gray-100 
-                            {% endif %} 
-                            rounded-lg">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-                </div>
-            {% endif %}            
+            <div class="bg-[#4285F4] text-white py-4 px-6">         
                 <h1 class="text-2xl font-bold text-center">Histórico Médico Digital</h1>
             </div>
 
-            <form action="{% url 'saude:menu' %}" method="POST" class="space-y-4 px-6 py-6">
+            <form action="{% url 'saude:historico_form' %}" method="POST" class="space-y-4 px-6 py-6">
                 {% csrf_token %}
                 <div>
                     <label for="nome" class="block text-lg font-medium text-gray-700">Nome:</label>
@@ -41,7 +25,7 @@
 
                 <div>
                     <label for="idade" class="block text-lg font-medium text-gray-700">Idade:</label>
-                    <input type="number" name="idade" id="idade" placeholder="Digite sua idade" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg">
+                    <input type="number" name="idade" id="idade" placeholder="Digite sua idade" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg" required>
                 </div>
 
                 <div>

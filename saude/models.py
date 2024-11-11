@@ -117,7 +117,6 @@ class DoencasBairro(models.Model):
 # Locais específicos dos postos de saúde dentro de um bairro
 class Locais_doencas(models.Model):
     nome = models.CharField(max_length=100)
-    #doenca_locais = models.CharField(max_length=255, default='Não informado')  # Agora é 'doenca_locais'
     doenca_bairro = models.ForeignKey(DoencasBairro, on_delete=models.CASCADE, default="valor_padrao")
 
     def __str__(self):
