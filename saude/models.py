@@ -1,6 +1,6 @@
-from django.db import models
-from django.contrib.auth.models import User
-from django.utils import timezone
+from django.db import models # type: ignore
+from django.contrib.auth.models import User # type: ignore
+from django.utils import timezone # type: ignore
 
 
 # Tabela no banco de dados que armazena informações sobre o histórico médico de uma pessoa
@@ -80,6 +80,29 @@ class Locais(models.Model):
 class Info_local(models.Model):
     nome = models.TextField(blank=True, null=True)
     locais = models.ForeignKey(Locais, on_delete=models.CASCADE, default=1)
+
+    def __str__(self):
+        return self.nome
+
+# Representa um bairro onde os postos de saúde estão localizados
+class PostosBairro(models.Model):
+    nome = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nome
+
+# Locais específicos dos postos de saúde dentro de um bairro
+class Endereco(models.Model):
+    nome = models.CharField(max_length=100)
+    posto_bairro = models.ForeignKey(PostosBairro, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.nome
+
+# Informações adicionais sobre os locais das UPAs
+class Horario(models.Model):
+    nome = models.TextField(blank=True, null=True)
+    posto_horario = models.ForeignKey(Endereco, on_delete=models.CASCADE, default=1)
 
     def __str__(self):
         return self.nome

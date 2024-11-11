@@ -1,11 +1,11 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from django.views import View
+from django.shortcuts import render, redirect, get_object_or_404 # type: ignore
+from django.views import View # type: ignore
 from .models import HistoricoMedico, SintomasUsuario
-from django.contrib.auth import authenticate, login as lg, login
-from django.contrib.auth.models import User
-from saude.models import Especialidade, Local, Consulta, Bairros, Locais
-from django.contrib import messages
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login as lg, login # type: ignore
+from django.contrib.auth.models import User # type: ignore
+from saude.models import Especialidade, Local, Consulta, Bairros, Locais, PostosBairro, Endereco
+from django.contrib import messages # type: ignore
+from django.contrib.auth.decorators import login_required # type: ignore
 
 
 # Gerencia o histórico médico do usuário
@@ -231,3 +231,30 @@ def cadastro_view(request):
 @login_required  
 def menu_view(request):
     return render(request, 'menu.html', {'username': request.user.username})
+
+# Exibe a localização dos postos de saúde e informações de horários     
+class Locais_PostoView(View):
+    def get(self, request):
+        bairro_posto = PostosBairro.objects.all()
+        posto = None
+        posto_bairro_id = request.GET.get('bairro')
+        
+        if posto_bairro_id:
+            posto = Endereco.objects.filter(posto_bairro_id=posto_bairro_id).prefetch_related('horario_set')
+
+        context = {
+            'bairro_posto': bairro_posto,
+            'posto': posto,
+            'posto_bairro_id': posto_bairro_id,
+        }
+
+        return render(request, 'vacinas.html', context)
+    
+    def post(self, request):
+        posto_bairro_id = request.POST.get('bairro')
+        posto_id = request.POST.get('posto')
+
+        postos = PostosBairro.objects.get(id=posto_bairro_id)
+        endereco = Endereco.objects.get(id=posto_id)
+
+        return redirect('saude:menu')  
