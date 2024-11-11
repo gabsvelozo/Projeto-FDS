@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SaúdeTec - Localização doenças</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    {% load static %}
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    {% include 'navbar.html' %}  
+
+    <div class="max-w-2xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <div class="bg-[#4285F4] text-white py-4 px-6">
+                <h1 class="text-2xl font-bold text-center">Selecione um Bairro</h1>
+            </div>
+            <div class="p-6">
+                <form method="GET" class="space-y-6">
+                    <label for="bairro-select" class="block text-lg font-medium text-gray-700">Escolha um bairro:</label>
+                    <select name="bairro" id="bairro-select" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-[#4285F4] focus:border-[#4285F4] text-base bg-gray-50">
+                        <option value="">Selecione um bairro</option>
+                        {% for bairro in bairro_doenca %}
+                            <option value="{{ bairro.id }}" {% if bairro.id == doenca_bairro_id %}selected{% endif %}>
+                                {{ bairro.nome }}
+                            </option>
+                        {% endfor %}
+                    </select>
+
+                    <div class="px-4">
+                        <button type="submit" class="w-full flex justify-center py-2 px-2 border border-transparent rounded-md shadow-sm text-md font-medium text-white bg-[#4285F4] hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4285F4] transform hover:scale-110 transition duration-400 ease-in-out" aria-label="doenças na area">
+                            Doenças na área
+                        </button>
+                    </div>
+                </form>
+
+                <div id="informacoes" class="mt-6">
+                    {% if doenca %}
+                    <h2 class="text-2xl font-bold mb-4">Locais disponíveis:</h2>
+                    {% for local in doenca %}
+                        <div class="tela mb-4 p-4 border rounded-lg shadow">
+                            <h3 class="text-xl font-semibold">{{ local.nome }}</h3>
+                            
+                        </div>
+                    {% endfor %}
+                    {% else %}
+                    <p class="text-gray-600">Nenhuma doença encontrada para esse bairro.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const mobileMenuButton = document.querySelector('[aria-controls="mobile-menu"]');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+                mobileMenuButton.setAttribute('aria-expanded', String(!expanded));
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>

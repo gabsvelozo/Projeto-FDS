@@ -3,10 +3,9 @@ from django.views import View # type: ignore
 from .models import HistoricoMedico, SintomasUsuario
 from django.contrib.auth import authenticate, login as lg, login # type: ignore
 from django.contrib.auth.models import User # type: ignore
-from saude.models import Especialidade, Local, Consulta, Bairros, Locais, PostosBairro, Endereco
+from saude.models import Especialidade, Local, Consulta, Bairros, Locais, PostosBairro, Endereco, DoencasBairro, Locais_doencas
 from django.contrib import messages # type: ignore
 from django.contrib.auth.decorators import login_required # type: ignore
-
 
 # Gerencia o histórico médico do usuário
 class HistoricoOnline(View):
@@ -258,3 +257,31 @@ class Locais_PostoView(View):
         endereco = Endereco.objects.get(id=posto_id)
 
         return redirect('saude:menu')  
+
+class DoencaView(View):
+    def get(self, request):
+        # Obter todos os bairros
+        bairro_doenca = DoencasBairro.objects.all()
+
+        # Buscar o bairro selecionado
+        doenca_bairro_id = request.GET.get('bairro')
+        doenca = None
+        
+        if doenca_bairro_id:
+            # Filtrar locais de doenças para o bairro selecionado
+            doenca = Locais_doencas.objects.filter(doenca_bairro_id=doenca_bairro_id)
+
+        context = {
+            'bairro_doenca': bairro_doenca,
+            'doenca': doenca,
+            'doenca_bairro_id': doenca_bairro_id,
+        }
+
+        return render(request, 'localizar_doencas.html', context)
+    
+    def post(self, request):
+        doenca_bairro_id = request.POST.get('bairro')
+        doenca_id = request.POST.get('doenca')
+
+        # Redirecionar para algum lugar após a escolha de uma doença
+        return redirect('saude:menu')
