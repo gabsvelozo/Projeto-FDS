@@ -105,14 +105,18 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 # Entrega 04
 
 ## Sprint do Jira:
+![sprint](https://github.com/user-attachments/assets/efa784f3-5024-4af2-9d22-78221509ee58)
 
 ## Quadro Backlog:
+![backlog](https://github.com/user-attachments/assets/15c6b0cb-7be4-4b6f-b046-19ffc153065c)
 
 ## Issues
+![issues](https://github.com/user-attachments/assets/2b86d332-ebe5-4a5d-a54b-d847cbfccd52)
 
 [Atualização do protótipo Lo-Fi](https://www.figma.com/proto/fJZdsUoj1KpcO9ZPP96tDq/Untitled?node-id=1-2&node-type=canvas&t=oVLnGHED9rGh40J5-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2)<br>
 [Screencast do Lo-Fi](https://www.youtube.com/watch?v=obNc_53mBzs)<br>
 [Website do Azure]
+[Screencast do deploy]
 [Screencast dos testes]
 [Screencast da build]
 
