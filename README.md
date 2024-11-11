@@ -120,7 +120,7 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 [Screencast dos testes]
 [Screencast da build]
 
-# Intalação
+# Instalação
 ## 1. Clone o repositório e abra a pasta
 - git clone https://github.com/gabsvelozo/SaudeTec.git
 - cd SaudeTec
