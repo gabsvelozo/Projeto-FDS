@@ -111,7 +111,7 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 ## Issues
 
 [Atualização do protótipo Lo-Fi]
-[Screencast do Lo-Fi]
+[Screencast do Lo-Fi](https://www.youtube.com/watch?v=obNc_53mBzs)<br>
 [Website do Azure]
 [Screencast dos testes]
 [Screencast da build]
