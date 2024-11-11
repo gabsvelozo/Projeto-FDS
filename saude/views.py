@@ -1,11 +1,11 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from django.views import View
+from django.shortcuts import render, redirect, get_object_or_404 # type: ignore
+from django.views import View # type: ignore
 from .models import HistoricoMedico, SintomasUsuario
-from django.contrib.auth import authenticate, login as lg, login
-from django.contrib.auth.models import User
-from saude.models import Especialidade, Local, Consulta, Bairros, Locais
-from django.contrib import messages
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login as lg, login # type: ignore
+from django.contrib.auth.models import User # type: ignore
+from saude.models import Especialidade, Local, Consulta, Bairros, Locais, Locais_doencas, DoencasBairro
+from django.contrib import messages # type: ignore
+from django.contrib.auth.decorators import login_required # type: ignore
 
 
 # Gerencia o histórico médico do usuário
@@ -186,6 +186,33 @@ class LocalView(View):
 
 ##################################################
 
+
+
+class DoencaView(View):
+    def get(self, request):
+        bairro_doenca = DoencasBairro.objects.all()
+        doenca = None
+        doenca_bairro_id = request.GET.get('bairro')
+        
+        if doenca_bairro_id:
+            doenca = Locais_doencas.objects.filter(doenca_bairro_id=doenca_bairro_id).prefetch_related('horario_set')
+
+        context = {
+            'bairro_doenca': bairro_doenca,
+            'doenca': doenca,
+            'doenca_bairro_id': doenca_bairro_id,
+        }
+
+        return render(request, 'localizar_doencas.html', context)
+    
+    def post(self, request):
+        doenca_bairro_id = request.POST.get('bairro')
+        doenca_id = request.POST.get('doenca')
+
+        doencas = DoencasBairro.objects.get(id=doenca_bairro_id)
+        endereco = Locais_doencas.objects.get(id=doenca_id)
+
+        return redirect('saude:menu')
 
 # Login
 def login_view(request):
