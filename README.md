@@ -102,6 +102,37 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 [Screencast do Azure](https://youtu.be/TjiBrgFAjiQ)<br>
 [Screencast dos testes](https://youtu.be/5YEgpYKPeYY)<br>
 
+## Entrega 04
+
+## Sprint do Jira:
+
+## Quadro Backlog:
+
+## Issues
+
+Atualização do protótipo Lo-Fi
+Screencast do Lo-Fi
+Website do Azure
+Screencast dos testes
+Screencast da build
+
+## Intalação
+# 1. Clone o repositório e abra a pasta
+git clone https://github.com/gabsvelozo/SaudeTec.git
+cd SaudeTec
+# 2. Crie e ative um ambiente virtual
+py -m venv venv
+venv\Scripts\Activate
+# 3. Instale as dependências
+python.exe -m pip install --upgrade pip
+pip install -r requirements.txt
+# 4. Faça o migrate
+py manage.py migrate
+# 5. Ativar o servidor
+py manage.py runserver
+# 6. Abrindo no navegador
+clique no  http://127.0.0.1:8000/ e será direcionado para uma página web
+
 ## Equipe:
 
 - Gabrielle Mastellari (gmv2@cesar.school)
