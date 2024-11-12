@@ -115,10 +115,10 @@ Uma aplicação web inovadora projetada para otimizar o atendimento público na 
 
 [Atualização do protótipo Lo-Fi](https://www.figma.com/proto/fJZdsUoj1KpcO9ZPP96tDq/Untitled?node-id=1-2&node-type=canvas&t=oVLnGHED9rGh40J5-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2)<br>
 [Screencast do Lo-Fi](https://www.youtube.com/watch?v=obNc_53mBzs)<br>
-[Website do Azure]
-[Screencast do deploy]
-[Screencast dos testes]
-[Screencast da build]
+[Website do Azure](https://saudetech-fkgxhnfzdxeec5h4.eastus-01.azurewebsites.net/)<br>
+[Screencast do deploy](https://www.youtube.com/watch?v=xaDxtq_w5Jc)<br>
+[Screencast dos testes](https://youtu.be/j4LLL2HriNc)<br>
+[Screencast da build](https://www.youtube.com/watch?v=vsOZTU2oc50)<br>
 
 # Instalação
 ## 1. Clone o repositório e abra a pasta
